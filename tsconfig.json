@@ -4,9 +4,15 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@twentyninelab/bj-ui-library/*": [
+        "./projects/twentyninelab/bj-ui-library/*"
+      ],
       "@twentyninelab/bj-ui-library": [
-        "./dist/twentyninelab/bj-ui-library"
-      ]
+        "./projects/twentyninelab/bj-ui-library"
+      ],
+      "@twentyninelab/bj-ui-library/bj-ux-kit/*": [
+        "./projects/twentyninelab/bj-ui-library/assets/styles/bj-ux-kit/*"
+      ],
     },
     "strict": true,
     "noImplicitOverride": true,
@@ -18,7 +24,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "ES2022"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

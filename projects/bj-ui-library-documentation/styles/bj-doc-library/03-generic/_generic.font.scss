@@ -1,3 +1,35 @@
+/* Font Awesome Free by https://github.com/FortAwesome/Font-Awesome */
+
+@font-face {
+     font-family: 'Font Awesome 6 Free';
+     font-style: normal;
+     font-weight: 400;
+     src: url('../../../assets/fonts/fa-regular-400.woff2');
+     src: local('Font Awesome 6 Free'), local('fa-solid-400'),
+          url('../../../assets/fonts/fa-regular-400.woff2') format('woff2'),
+          url('../../../assets/fonts/fa-regular-400.ttf') format('truetype');
+}
+
+@font-face {
+     font-family: 'Font Awesome 6 Free';
+     font-style: normal;
+     font-weight: 900;
+     src: url('../../../assets/fonts/fa-solid-900.woff2');
+     src: local('Font Awesome 6 Free'), local('fa-solid-900'),
+          url('../../../assets/fonts/fa-solid-900.woff2') format('woff2'),
+          url('../../../assets/fonts/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+     font-family: 'Font Awesome 6 Brands';
+     font-style: normal;
+     font-weight: 400;
+     src: url('../../../assets/fonts/fa-brands-400.woff2');
+     src: local('Font Awesome 6 Brands'), local('fa-brands-400'),
+          url('../../../assets/fonts/fa-brands-400.woff2') format('woff2'),
+          url('../../../assets/fonts/fa-brands-400.ttf') format('truetype');
+}
+
 /* Lexend */
 @font-face {
      font-display: swap;

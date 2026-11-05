@@ -1,0 +1,20 @@
+@use 'bj-ux-kit/01-settings/settings.breakpoints' as breakpoints;
+@use 'bj-ux-kit/02-tools/tools.media-queries' as mediaQueries;
+
+.bj-layout-topbar {
+  align-items: center;
+  background-color: var(--bj-layout-topbar-background, var(--bj-surface-card));
+  box-shadow: var(--bj-layout-topbar-shadow, var(--bj-surface-shadow));
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  min-height: var(--bj-layout-topbar-height, 4rem);
+  padding-inline: var(--u-spacing-x-md);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  &__logo {
+    flex-grow: 1;
+  }
+}

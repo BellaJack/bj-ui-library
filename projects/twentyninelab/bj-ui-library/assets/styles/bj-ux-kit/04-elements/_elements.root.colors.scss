@@ -208,12 +208,11 @@
         0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
         1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
 
-  --bj-surface-border: var(--p-surface-300);
-  --bj-surface-ground: var(--p-surface-100);
-  --bj-surface-card: var(--p-content-background);
-  --bj-surface-overlay: var(--p-overlay-popover-background);
-  --bj-surface-hover: var(--p-content-hover-background);
-  --mask-layout: var(--p-mask-background);
-
-  --bj-surface-shadow: 0 1px 3px 0 rgba(0,0,0,0.05),0 1px 2px -1px rgba(0,0,0,0.05);
+    --bj-surface-border: var(--bj-color-gray-300);
+    --bj-surface-ground: var(--bj-color-gray-100);
+    --bj-surface-card: var(--bj-color-white);
+    --bj-surface-overlay: var(--bj-color-white);
+    --bj-surface-hover: var(--p-content-hover-background);
+    --bj-surface-shadow: none; //0 1px 3px 0 rgba(0,0,0,0.05),0 1px 2px -1px rgba(0,0,0,0.05);
+    --mask-layout: var(--p-mask-background);
 }

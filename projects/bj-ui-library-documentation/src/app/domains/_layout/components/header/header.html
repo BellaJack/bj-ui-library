@@ -1,0 +1,34 @@
+<header class="bj-layout-topbar">
+    <div class="kw-flex">
+        <button
+            class="bj-btn-outline bj-ds-layout-menu-button"
+            type="button"
+            (click)="onMenuToggle()">
+            <i
+                aria-hidden="true"
+                class="fas"
+                [ngClass]="{
+                    'fa-xmark': menuOpened,
+                    'fa-bars-staggered': !menuOpened
+                }">
+            </i>
+            <span class="bj-ty-small" aria-hidden="true">Menu</span>
+            <span class="u-v-hidden">{{ menuOpened ? 'Close Menu' : 'Open Menu' }}</span>
+        </button>
+    </div>
+    <a
+        routerLink="/"
+        class="bj-flex bj-gap-medium bj-link-no-decoration">
+        <span aria-hidden="true" class="bj-ty-heading-2">Test</span>
+        <span class="u-v-hidden">Go to Home BJ Design System Library</span>
+    </a>
+    <div class="bj-flex bj-gap-medium">
+        <a
+            class="bj-btn-icon bj-link-no-decoration"
+            href="https://github.com/BellaJack/bj-ui-library"
+            target="_blank">
+            <i aria-hidden="true" class="fab fa-github"></i>
+            <span class="u-v-hidden">GitHub</span>
+        </a>
+    </div>
+</header>

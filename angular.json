@@ -10,7 +10,7 @@
       "projectType": "library",
       "root": "projects/twentyninelab/bj-ui-library",
       "sourceRoot": "projects/twentyninelab/bj-ui-library/src",
-      "prefix": "lib",
+      "prefix": "bj",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
@@ -49,6 +49,9 @@
             "browser": "projects/bj-ui-library-documentation/src/main.ts",
             "tsConfig": "projects/bj-ui-library-documentation/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/twentyninelab/bj-ui-library/assets/styles"]
+            },
             "assets": [
               {
                 "glob": "**/*",

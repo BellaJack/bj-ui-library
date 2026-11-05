@@ -1,1 +1,11 @@
-<div>Hello darkness my old friend</div>
+<div class="bj-layout-wrapper" [ngClass]="containerClass">
+  <bj-layout-header></bj-layout-header>
+  <bj-layout-sidebar></bj-layout-sidebar>
+  <div class="bj-layout-main-container">
+    <main class="bj-layout-main">
+      <router-outlet />
+    </main>
+    <bj-layout-footer></bj-layout-footer>
+  </div>
+  <div aria-hidden="true" class="bj-layout-mask"></div>
+</div>

@@ -1,8 +1,12 @@
-@use '../01-settings/settings.font' as fonts;
-
 .bj-link {
     font: {
-        weight: fonts.$font-weight-bold;
+        weight: var(--bj-link-font-weight, var(--bj-font-weight-semibold));
+    }
+}
+
+.bj-link-no-decoration {
+    text: {
+        decoration: none;
     }
 }
 

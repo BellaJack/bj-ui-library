@@ -10,8 +10,8 @@
 // -----------------------------------------------------------------------------
 // Base Colors
 // -----------------------------------------------------------------------------
-$color-white: #fdfcff;
-$color-black: #1a1a1a;
+$color-white: oklch(99.267% 0.00418 300.65);
+$color-black: oklch(21.779% 0.00002 271.152);
 
 // -----------------------------------------------------------------------------
 // Primary Color Scale (Purple)
@@ -56,29 +56,17 @@ $bj-color-tertiary-100: oklch(94.643% 0.03284 307.067);
 $bj-color-tertiary-50: oklch(97.685% 0.01429 308.033);
 
 $bj-color-gray: $color-black;
-$bj-color-gray-950: oklch(12.88% 0.04062 264.709);
-$bj-color-gray-900: oklch(20.768% 0.03985 265.767);
-$bj-color-gray-800: oklch(27.95% 0.03688 260.049);
-$bj-color-gray-700: oklch(37.17% 0.0392 257.31);
-$bj-color-gray-600: oklch(44.554% 0.0375 257.307);
-$bj-color-gray-500: oklch(55.439% 0.04078 257.446);
-$bj-color-gray-400: oklch(71.068% 0.0352 256.828);
-$bj-color-gray-300: oklch(86.898% 0.01994 252.99);
-$bj-color-gray-200: oklch(92.876% 0.01272 255.643);
-$bj-color-gray-100: oklch(96.826% 0.00696 248.26);
-$bj-color-gray-50: oklch(98.415% 0.00352 248.585);
-
-$bj-color-dark-gray-950: $bj-color-gray-950;
-$bj-color-dark-gray-900: oklch(20.793% 0.0221 276.321);
-$bj-color-dark-gray-800: oklch(21.565% 0.02222 272.607);
-$bj-color-dark-gray-700: oklch(23.187% 0.02221 269.102);
-$bj-color-dark-gray-600: oklch(24.784% 0.0223 265.718);
-$bj-color-dark-gray-500: oklch(27.995% 0.02214 262.509);
-$bj-color-dark-gray-400: oklch(33.264% 0.02068 265.968);
-$bj-color-dark-gray-300: oklch(39.308% 0.013 261.786);
-$bj-color-dark-gray-200: oklch(41.686% 0.01032 271.172);
-$bj-color-dark-gray-100: oklch(43.213% 0.00833 276.962);
-$bj-color-dark-gray-50: oklch(43.873% 0.0051 271.305);
+$bj-color-gray-950: oklch(16.516% 0.00626 285.66);
+$bj-color-gray-900: oklch(21.033% 0.00588 285.832);
+$bj-color-gray-800: oklch(27.394% 0.00551 285.955);
+$bj-color-gray-700: oklch(37.032% 0.01192 285.76);
+$bj-color-gray-600: oklch(44.186% 0.01467 285.743);
+$bj-color-gray-500: oklch(55.167% 0.01387 285.878);
+$bj-color-gray-400: oklch(71.182% 0.01302 285.981);
+$bj-color-gray-300: oklch(87.111% 0.00555 286.025);
+$bj-color-gray-200: oklch(91.973% 0.00413 285.946);
+$bj-color-gray-100: oklch(96.744% 0.00143 285.225);
+$bj-color-gray-50: oklch(98.511% 0.00011 271.152);
 
 $bj-color-error: oklch(56.209% 0.22458 28.64);
 $bj-color-error-light: oklch(93.218% 0.03429 17.615);
@@ -94,59 +82,6 @@ $bj-color-social-tk: oklch(100% 0.00011 271.152);
 $bj-color-social-yt: oklch(49.736% 0.20411 29.223);
 $bj-color-social-sp: oklch(68.884% 0.18695 148.941);
 $bj-color-social-am: oklch(66.374% 0.20863 21.532);
-
-// temp color a11y-rebels
-// light blue
-// $bj-color-primary-50: #f3f8fc;
-// $bj-color-primary-100: #e5f1f9;
-// $bj-color-primary-200: #c6e3f1;
-// $bj-color-primary-300: #acd8eb; // primary
-// $bj-color-primary-400: #5bb3d5;
-// $bj-color-primary-500: #3599c2;
-// $bj-color-primary-600: #257ca4;
-// $bj-color-primary-700: #1f6385;
-// $bj-color-primary-800: #1e546e;
-// $bj-color-primary-900: #1e465c;
-// $bj-color-primary-950: #142e3d;
-
-// // green
-// $bj-color-secondary-50: #f0f9f3;
-// $bj-color-secondary-100: #dbf0e1;
-// $bj-color-secondary-200: #b9e1c7;
-// $bj-color-secondary-300: #74c194; // primary
-// $bj-color-secondary-400: #59ae7f;
-// $bj-color-secondary-500: #379263;
-// $bj-color-secondary-600: #27744e;
-// $bj-color-secondary-700: #1f5d3f;
-// $bj-color-secondary-800: #1b4a34;
-// $bj-color-secondary-900: #173d2c;
-// $bj-color-secondary-950: #0c2219;
-
-// // blue
-// $bj-color-tertiary-50: #f1f8fd;
-// $bj-color-tertiary-100: #e0eff9;
-// $bj-color-tertiary-200: #c7e3f6;
-// $bj-color-tertiary-300: #a1d2ef;
-// $bj-color-tertiary-400: #75b8e5;
-// $bj-color-tertiary-500: #509adc; // primary
-// $bj-color-tertiary-600: #4082d0;
-// $bj-color-tertiary-700: #366ebf;
-// $bj-color-tertiary-800: #325a9b;
-// $bj-color-tertiary-900: #2d4d7b;
-// $bj-color-tertiary-950: #1f304c;
-
-// yellow
-// $bj-color-tertiary-50: #fdfaed;
-// $bj-color-tertiary-100: #f9efcc;
-// $bj-color-tertiary-200: #f3dd94;
-// $bj-color-tertiary-300: #f0d077;
-// $bj-color-tertiary-400: #e9b236;
-// $bj-color-tertiary-500: #e1931f;
-// $bj-color-tertiary-600: #c77118;
-// $bj-color-tertiary-700: #a55118;
-// $bj-color-tertiary-800: #874019;
-// $bj-color-tertiary-900: #6f3418;
-// $bj-color-tertiary-950: #3f1a09;
 
 // =============================================================================
 // COLOR MAPS (for programmatic iteration)

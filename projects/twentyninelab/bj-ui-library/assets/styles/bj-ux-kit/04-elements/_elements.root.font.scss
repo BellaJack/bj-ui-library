@@ -8,11 +8,11 @@
 
 :root {
     --bj-font-weight-light: #{fonts.$font-weight-light};
-    --bj-font-weight-regular: #{fonts.$font-weight-light};
-    --bj-font-weight-medium: #{fonts.$font-weight-regular};
-    --bj-font-weight-semibold: #{fonts.$font-weight-medium};
-    --bj-font-weight-bold: #{fonts.$font-weight-semibold};
-    --bj-font-weight-extrabold: #{fonts.$font-weight-bold};
+    --bj-font-weight-regular: #{fonts.$font-weight-regular};
+    --bj-font-weight-medium: #{fonts.$font-weight-medium};
+    --bj-font-weight-semibold: #{fonts.$font-weight-semibold};
+    --bj-font-weight-bold: #{fonts.$font-weight-bold};
+    --bj-font-weight-extrabold: #{fonts.$font-weight-extrabold};
 
     --bj-font-weight-body: #{fonts.$font-weight-light};
     --bj-font-weight-heading: #{fonts.$font-weight-bold};
