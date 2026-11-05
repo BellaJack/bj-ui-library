@@ -1,0 +1,10 @@
+@use '../01-settings/settings.animations' as animations;
+
+:root {
+  --bj-animation-time-faster: #{animations.$time-faster};
+  --bj-animation-time-fast: #{animations.$time-fast};
+  --bj-animation-time-medium: #{animations.$time-medium};
+  --bj-animation-time-slow: #{animations.$time-slow};
+  --bj-animation-time-slower: #{animations.$time-slower};
+  --bj-animation-layout-duration: var(--bj-animation-time-fast);
+}

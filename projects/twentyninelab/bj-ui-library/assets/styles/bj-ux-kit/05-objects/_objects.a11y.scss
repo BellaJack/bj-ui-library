@@ -1,0 +1,66 @@
+@use '../01-settings/settings.font' as fonts;
+@use '../02-tools/tools.utilities' as tools;
+
+.bj-dsa-wrap {
+    line-height: 1.9;
+    max-width: 70ch;
+
+    p,
+    ul,
+    ol,
+    blockquote {
+        &:not(:last-child) {
+            margin-bottom: var(--u-spacing-y-xs);
+            margin-bottom: 1lh;
+        }
+    }
+
+    ul,
+    ol {
+        padding-left: var(--u-spacing-x-md);
+    }
+
+    a {
+        font-weight: fonts.$font-weight-regular;
+    }
+
+    ul {
+        list-style-type: disc;
+
+        ul {
+            list-style-type: circle;
+        }
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: var(--u-spacing-y-xs);
+        }
+    }
+}
+
+.bj-skip-menu {
+    align-items: center;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    padding: var(--u-spacing-y-xs) 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    &:not(:focus-within) {
+        @include tools.visually-hidden(true);
+    }
+}
+
+.bj-skip-link {
+    &:not(:focus) {
+        @include tools.visually-hidden(true);
+    }
+}

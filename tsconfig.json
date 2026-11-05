@@ -3,6 +3,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@twentyninelab/bj-ui-library": [
+        "./dist/twentyninelab/bj-ui-library"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -21,5 +26,19 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/twentyninelab/bj-ui-library/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/twentyninelab/bj-ui-library/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/bj-ui-library-documentation/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/bj-ui-library-documentation/tsconfig.spec.json"
+    }
+  ]
 }

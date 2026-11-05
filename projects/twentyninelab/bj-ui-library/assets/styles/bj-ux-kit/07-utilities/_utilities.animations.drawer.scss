@@ -1,0 +1,32 @@
+.bj-drawer-enter-from,
+.bj-drawer-leave-to,
+.bj-drawer-enter {
+  .bj-drawer__container {
+    transform: translateX(-100%);
+  }
+
+  &.bj-drawer--bottom {
+    .bj-drawer__container {
+      transform: translateY(100%);
+    }
+  }
+
+  &.bj-drawer--right {
+    .bj-drawer__container {
+      transform: translateX(100%);
+    }
+  }
+
+  &.bj-drawer--top {
+    .bj-drawer__container {
+      transform: translateY(-100%);
+    }
+  }
+
+  &.bj-drawer--full {
+    .bj-drawer__container {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }
+}

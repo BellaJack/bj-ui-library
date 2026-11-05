@@ -1,0 +1,249 @@
+@use "../01-settings/settings.colors";
+
+@mixin background($bgColor, $color) {
+    background: {
+        color: $bgColor;
+    }
+
+    color: $color;
+}
+
+@mixin bg-primary-950 {
+    @include background(var(--bj-color-primary-950), var(--bj-color-white));
+}
+
+@mixin bg-primary-900 {
+    @include background(var(--bj-color-primary-900), var(--bj-color-white));
+}
+
+@mixin bg-primary-800 {
+    @include background(var(--bj-color-primary-800), var(--bj-color-white));
+}
+
+@mixin bg-primary-700 {
+    @include background(var(--bj-color-primary-700), var(--bj-color-white));
+}
+
+@mixin bg-primary-600 {
+    @include background(var(--bj-color-primary-600), var(--bj-color-white));
+}
+
+@mixin bg-primary-500 {
+    @include background(var(--bj-color-primary-500), var(--bj-color-white));
+}
+
+@mixin bg-primary-400 {
+    @include background(var(--bj-color-primary-400), var(--bj-color-gray-900));
+}
+
+@mixin bg-primary-300 {
+    @include background(var(--bj-color-primary-300), var(--bj-color-gray-900));
+}
+
+@mixin bg-primary-200 {
+    @include background(var(--bj-color-primary-200), var(--bj-color-gray-900));
+}
+
+@mixin bg-primary-100 {
+    @include background(var(--bj-color-primary-100), var(--bj-color-gray-900));
+}
+
+@mixin bg-primary-50 {
+    @include background(var(--bj-color-primary-50), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-950 {
+    @include background(var(--bj-color-secondary-950), var(--bj-color-white));
+}
+
+@mixin bg-secondary-900 {
+    @include background(var(--bj-color-secondary-900), var(--bj-color-white));
+}
+
+@mixin bg-secondary-800 {
+    @include background(var(--bj-color-secondary-800), var(--bj-color-white));
+}
+
+@mixin bg-secondary-700 {
+    @include background(var(--bj-color-secondary-700), var(--bj-color-white));
+}
+
+@mixin bg-secondary-600 {
+    @include background(var(--bj-color-secondary-600), var(--bj-color-white));
+}
+
+@mixin bg-secondary-500 {
+    @include background(var(--bj-color-secondary-500), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-400 {
+    @include background(var(--bj-color-secondary-400), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-300 {
+    @include background(var(--bj-color-secondary-300), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-200 {
+    @include background(var(--bj-color-secondary-200), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-100 {
+    @include background(var(--bj-color-secondary-100), var(--bj-color-gray-900));
+}
+
+@mixin bg-secondary-50 {
+    @include background(var(--bj-color-secondary-50), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-950 {
+    @include background(var(--bj-color-tertiary-950), var(--bj-color-white));
+}
+
+@mixin bg-tertiary-900 {
+    @include background(var(--bj-color-tertiary-900), var(--bj-color-white));
+}
+
+@mixin bg-tertiary-800 {
+    @include background(var(--bj-color-tertiary-800), var(--bj-color-white));
+}
+
+@mixin bg-tertiary-700 {
+    @include background(var(--bj-color-tertiary-700), var(--bj-color-white));
+}
+
+@mixin bg-tertiary-600 {
+    @include background(var(--bj-color-tertiary-600), var(--bj-color-white));
+}
+
+@mixin bg-tertiary-500 {
+    @include background(var(--bj-color-tertiary-500), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-400 {
+    @include background(var(--bj-color-tertiary-400), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-300 {
+    @include background(var(--bj-color-tertiary-300), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-200 {
+    @include background(var(--bj-color-tertiary-200), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-100 {
+    @include background(var(--bj-color-tertiary-100), var(--bj-color-gray-900));
+}
+
+@mixin bg-tertiary-50 {
+    @include background(var(--bj-color-tertiary-50), var(--bj-color-gray-900));
+}
+
+@mixin bg-gray-950 {
+    @include background(var(--bj-color-gray-950), var(--bj-color-white));
+}
+
+@mixin bg-gray-900 {
+    @include background(var(--bj-color-gray-900), var(--bj-color-white));
+}
+
+@mixin bg-gray-800 {
+    @include background(var(--bj-color-gray-800), var(--bj-color-white));
+}
+
+@mixin bg-gray-700 {
+    @include background(var(--bj-color-gray-700), var(--bj-color-white));
+}
+
+@mixin bg-gray-600 {
+    @include background(var(--bj-color-gray-600), var(--bj-color-white));
+}
+
+@mixin bg-gray-500 {
+    @include background(var(--bj-color-gray-500), var(--bj-color-white));
+}
+
+@mixin bg-gray-400 {
+    @include background(var(--bj-color-gray-400), var(--bj-color-gray-900));
+}
+
+@mixin bg-gray-300 {
+    @include background(var(--bj-color-gray-300), var(--bj-color-gray-900));
+}
+
+@mixin bg-gray-200 {
+    @include background(var(--bj-color-gray-200), var(--bj-color-gray-900));
+}
+
+@mixin bg-gray-100 {
+    @include background(var(--bj-color-gray-100), var(--bj-color-gray-900));
+}
+
+@mixin bg-gray-50 {
+    @include background(var(--bj-color-gray-50), var(--bj-color-gray-900));
+}
+
+@mixin bg-dark-gray-900 {
+    @include background(settings.$bj-color-dark-gray-900, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-800 {
+    @include background(settings.$bj-color-dark-gray-800, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-700 {
+    @include background(settings.$bj-color-dark-gray-700, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-600 {
+    @include background(settings.$bj-color-dark-gray-600, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-500 {
+    @include background(settings.$bj-color-dark-gray-500, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-400 {
+    @include background(settings.$bj-color-dark-gray-400, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-300 {
+    @include background(settings.$bj-color-dark-gray-300, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-200 {
+    @include background(settings.$bj-color-dark-gray-200, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-100 {
+    @include background(settings.$bj-color-dark-gray-100, var(--bj-color-white));
+}
+
+@mixin bg-dark-gray-50 {
+    @include background(settings.$bj-color-dark-gray-50, var(--bj-color-white));
+}
+
+@mixin bg-status-error {
+    @include background(var(--bj-color-error), var(--bj-color-white));
+}
+
+@mixin bg-status-error-light {
+    @include background(var(--bj-color-error-light), var(--bj-color-gray-900));
+}
+
+@mixin bg-status-warning {
+    @include background(var(--bj-color-warning), var(--bj-color-gray-900));
+}
+
+@mixin bg-status-warning-light {
+    @include background(var(--bj-color-warning-light), var(--bj-color-gray-900));
+}
+
+@mixin bg-status-success {
+    @include background(var(--bj-color-success), var(--bj-color-white));
+}
+
+@mixin bg-status-success-light {
+    @include background(var(--bj-color-success-light), var(--bj-color-gray-900));
+}

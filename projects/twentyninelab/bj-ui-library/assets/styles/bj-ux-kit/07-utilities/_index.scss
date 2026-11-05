@@ -1,0 +1,25 @@
+// =============================================================================
+// 07-UTILITIES - HELPER CLASSES (HIGH SPECIFICITY)
+// =============================================================================
+// This layer contains single-purpose utility classes with high specificity.
+// Utilities use the `u-` prefix by convention (e.g., .u-hidden, .u-text-center).
+// These classes are designed to override component styles when necessary.
+// =============================================================================
+
+@forward 'utilities.align-justify';
+
+// Background utilities
+@forward 'utilities.background';
+
+// Border utilities
+@forward 'utilities.border';
+@forward 'utilities.border-radius';
+
+// Color utilities
+@forward 'utilities.colors';
+
+// Animation utilities
+@forward 'utilities.animations.drawer';
+
+// General UI utilities
+@forward 'utilities.ui.utilities';

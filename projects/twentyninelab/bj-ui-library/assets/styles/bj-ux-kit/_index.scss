@@ -1,0 +1,45 @@
+// =============================================================================
+// BJ-UX-KIT - DESIGN SYSTEM
+// =============================================================================
+// Main entry point for the BJ UX Kit design system.
+// Uses ITCSS (Inverted Triangle CSS) architecture with strict layer ordering.
+//
+// LAYER ORDER (from generic to specific):
+// 1. Settings   - Design tokens, variables, maps (No CSS output)
+// 2. Tools      - Mixins and functions (No CSS output)
+// 3. Generic    - Reset/normalize styles (CSS output begins)
+// 4. Elements   - Unclassed HTML elements + CSS custom properties
+// 5. Objects    - Class-based structural patterns (OOCSS)
+// 6. Components - Specific UI components (BEM)
+// 7. Utilities  - Helper classes (high specificity overrides)
+// 8. Override   - Third-party/legacy overrides (use sparingly)
+//
+// USAGE:
+// For full design system: @use 'bj-ux-kit' as *;
+// For settings only: @use 'bj-ux-kit/01-settings' as settings;
+// For tools only: @use 'bj-ux-kit/02-tools' as tools;
+// =============================================================================
+
+// Settings (No CSS output - design tokens only)
+@forward '01-settings';
+
+// Tools (No CSS output - mixins and functions only)
+@forward '02-tools';
+
+// Generic (CSS reset and normalize)
+@forward '03-generic';
+
+// Elements (Base HTML element styles + CSS custom properties)
+@forward '04-elements';
+
+// Objects (Structural layout patterns)
+@forward '05-objects';
+
+// Components (UI component styles)
+@forward '06-components';
+
+// Utilities (Helper classes)
+@forward '07-utilities';
+
+// Overrides (Third-party/CMS fixes)
+@forward '08-override';

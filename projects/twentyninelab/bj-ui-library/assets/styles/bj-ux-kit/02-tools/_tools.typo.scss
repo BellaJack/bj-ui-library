@@ -1,0 +1,138 @@
+@use "../01-settings/settings.font";
+@use "../01-settings/settings.function.rem" as settingsRem;
+
+@mixin bj-heading-1 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h1);
+    size: var(--bj-typo-h1-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+
+  line-height: 1.1;
+}
+
+@mixin bj-heading-2 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h2);
+    size: var(--bj-typo-h2-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+
+  line-height: 1.1;
+}
+
+@mixin bj-heading-3 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h3);
+    size: var(--bj-typo-h3-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+  
+  line-height: 1.1;
+}
+
+@mixin bj-heading-4 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h4);
+    size: var(--bj-typo-h4-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-heading-5 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h5);
+    size: var(--bj-typo-h5-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-heading-6 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-h6);
+    size: var(--bj-typo-h6-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-display-1 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-1);
+    size: var(--bj-typo-display-1-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+
+  line-height: 1.1;
+}
+
+@mixin bj-display-2 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-2);
+    size: var(--bj-typo-display-2-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+
+  line-height: 1.1;
+}
+
+@mixin bj-display-3 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-3);
+    size: var(--bj-typo-display-3-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+  
+  line-height: 1.1;
+}
+
+@mixin bj-display-4 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-4);
+    size: var(--bj-typo-display-4-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-display-5 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-5);
+    size: var(--bj-typo-display-5-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-display-6 {
+  font: {
+    family: settings.$font-family-header;
+    size: var(--bj-typo-display-6);
+    size: var(--bj-typo-display-6-clamp);
+    weight: var(--bj-font-weight-heading);
+  }
+}
+
+@mixin bj-label-uppercase {
+  font: {
+    size: var(--bj-typo-small);
+  }
+  
+  letter-spacing: 1.1px;
+
+  text: {
+    transform: uppercase;
+  }
+}
+
+@mixin bj-button-label($line-height: 24px) {
+  line-height: settingsRem.rem($line-height);
+}

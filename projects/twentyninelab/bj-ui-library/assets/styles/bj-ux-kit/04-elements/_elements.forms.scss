@@ -1,0 +1,7 @@
+@use '../02-tools/tools.forms' as toolsForms;
+
+input[type="text"],
+input[type="email"],
+textarea {
+    @include toolsForms.form-element-base;
+}

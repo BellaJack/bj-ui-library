@@ -1,0 +1,23 @@
+// =============================================================================
+// 04-ELEMENTS - HTML ELEMENT STYLES & CSS CUSTOM PROPERTIES
+// =============================================================================
+// This layer contains styles for unclassed HTML elements and CSS custom properties.
+// CSS custom properties are defined here to enable runtime theming.
+// =============================================================================
+
+// CSS Custom Properties (Design Tokens as CSS Variables)
+@forward 'elements.root.animation';
+@forward 'elements.root.colors';
+@forward 'elements.root.colors.dark';
+@forward 'elements.root.font';
+@forward 'elements.root.sizes';
+@forward 'elements.root.typo';
+
+// Base HTML element styles
+@forward 'elements.html';
+@forward 'elements.body';
+@forward 'elements.typo';
+@forward 'elements.links';
+@forward 'elements.button';
+@forward 'elements.forms';
+@forward 'elements.code';

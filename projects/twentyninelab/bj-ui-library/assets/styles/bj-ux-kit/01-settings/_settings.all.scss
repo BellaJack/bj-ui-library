@@ -1,0 +1,16 @@
+// =============================================================================
+// SETTINGS ALL
+// =============================================================================
+
+@use "settings.function.rem";
+@use "settings.animations" as settingsAnimations;
+@use "settings.breakpoints" as settingsBreakpoints;
+@use "settings.colors" as settingsColors;
+@use "settings.config" as settingsConfig;
+@use "settings.font" as settingsFont;
+@use "settings.icon" as settingsIcon;
+@use "settings.sizes" as settingsSize;
+@use "settings.spacing" as settingsSpacing;
+@use "settings.svg" as settingsSvg;
+@use "settings.typography" as settingsTypography;
+@use "settings.z-layers" as settingsZLayers;

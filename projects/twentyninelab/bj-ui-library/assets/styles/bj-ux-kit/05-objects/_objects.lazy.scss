@@ -1,0 +1,12 @@
+@use '../01-settings/settings.animations' as animations;
+
+.bj-lazy {
+    //opacity: 0;
+    filter: blur(10px);
+    transition: filter animations.$time-fast ease;
+
+    &.bj-lazy-loaded {
+        //opacity: 1;
+        filter: blur(0);
+    }
+}

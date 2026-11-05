@@ -1,0 +1,45 @@
+// =============================================================================
+// 05-OBJECTS - LAYOUT & STRUCTURAL CLASSES (OOCSS)
+// =============================================================================
+// This layer contains class-based, cosmetic-free design patterns.
+// Objects use the `o-` prefix by convention (e.g., .o-grid, .o-container).
+// These are structural patterns that can be reused across components.
+// =============================================================================
+
+// Accessibility
+@forward './objects.a11y';
+
+// Layout objects
+// Note: hide $breakpoints-map to avoid conflicts (each file defines its own internal copy)
+@forward './objects.flex' hide $breakpoints-map;
+@forward './objects.grid' hide $breakpoints-map;
+@forward './objects.gap' hide $breakpoints-map;
+
+// Spacing utilities
+// Note: spacing-config is used internally by margins and paddings, not forwarded
+@forward './objects.margins';
+@forward './objects.paddings';
+
+// Visual objects
+@forward './objects.background-gradient';
+@forward './objects.borders';
+@forward './objects.shadow';
+@forward './objects.dp-layers';
+
+// Component patterns
+@forward './objects.button' hide $breakpoints-map, $button-variants, $button-sizes;
+@forward './objects.forms';
+@forward './objects.input';
+@forward './objects.icon';
+@forward './objects.round-icon';
+@forward './objects.image';
+@forward './objects.lazy';
+@forward './objects.link';
+@forward './objects.list';
+@forward './objects.progressbar';
+@forward './objects.ratio';
+@forward './objects.section';
+@forward './objects.table';
+@forward './objects.tablist';
+@forward './objects.typo';
+@forward './objects.widget';

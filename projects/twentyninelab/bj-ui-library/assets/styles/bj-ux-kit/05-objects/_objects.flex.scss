@@ -1,0 +1,55 @@
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+
+// Breakpoint prefixes
+$breakpoints-map: (
+    '': null,
+    'md': breakpoints.$screen-md,
+    'lg': breakpoints.$screen-lg,
+    'xl': breakpoints.$screen-xl,
+    'xxl': breakpoints.$screen-xxl
+);
+
+// Generate flex utilities
+@mixin generate-flex-utilities($prefix: '') {
+    $separator: if(sass($prefix != ""): "-#{$prefix}"; else: "");
+
+    .bj-flex#{$separator} {
+        display: flex;
+    }
+
+    .bj-flex#{$separator}-no-wrap {
+        flex-wrap: nowrap;
+    }
+
+    .bj-flex#{$separator}-column {
+        flex-direction: column;
+    }
+
+    .bj-flex#{$separator}-order-first {
+        order: -1;
+    }
+}
+
+// Base flex utilities (always available)
+.bj-flex {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bj-flex-grow {
+    flex-grow: 1;
+}
+
+// Base utilities (no media query)
+@include generate-flex-utilities();
+
+// Generate responsive utilities
+@each $prefix, $breakpoint in $breakpoints-map {
+    @if $breakpoint {
+        @include mediaQueries.respond-above($breakpoint) {
+            @include generate-flex-utilities($prefix);
+        }
+    }
+}

@@ -6,5 +6,118 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "@twentyninelab/bj-ui-library": {
+      "projectType": "library",
+      "root": "projects/twentyninelab/bj-ui-library",
+      "sourceRoot": "projects/twentyninelab/bj-ui-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/twentyninelab/bj-ui-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/twentyninelab/bj-ui-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/twentyninelab/bj-ui-library/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "bj-ui-library-documentation": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/bj-ui-library-documentation",
+      "sourceRoot": "projects/bj-ui-library-documentation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/bj-ui-library-documentation/src/main.ts",
+            "tsConfig": "projects/bj-ui-library-documentation/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/twentyninelab/bj-ui-library/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/bj-ui-library-documentation/public"
+              }
+            ],
+            "styles": [
+              {
+                "input": "projects/twentyninelab/bj-ui-library/assets/styles/styles.scss"
+              },
+              "projects/bj-ui-library-documentation/styles/styles.scss"
+            ],
+            "server": "projects/bj-ui-library-documentation/src/main.server.ts",
+            "outputMode": "server",
+            "security": {
+              "allowedHosts": []
+            },
+            "ssr": {
+              "entry": "projects/bj-ui-library-documentation/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "bj-ui-library-documentation:build:production"
+            },
+            "development": {
+              "buildTarget": "bj-ui-library-documentation:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4270
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,121 @@
+// =============================================================================
+// MEDIA QUERY TOOLS
+// =============================================================================
+// Mixins for responsive design. Use these instead of raw @media queries.
+// =============================================================================
+
+@use 'sass:map';
+@use "../01-settings/settings.breakpoints" as settings;
+@use "../01-settings/settings.config" as settingsConfig;
+
+// =============================================================================
+// PRIMARY RESPONSIVE MIXINS
+// =============================================================================
+
+/// Apply styles above a specific breakpoint (mobile-first)
+/// @param {Length} $screen - The minimum width breakpoint
+/// @example
+///   @include respond-above(settings.$screen-md) { ... }
+@mixin respond-above($screen) {
+    @media (min-width: #{$screen}) {
+        @content;
+    }
+}
+
+/// Apply styles below a specific breakpoint
+/// @param {Length} $screen-max - The maximum width breakpoint
+/// @example
+///   @include respond-below(settings.$screen-lg) { ... }
+@mixin respond-below($screen-max) {
+    @media (max-width: #{$screen-max - 0.1}) {
+        @content;
+    }
+}
+
+/// Apply styles between two breakpoints
+/// @param {Length} $screen-min - The minimum width breakpoint
+/// @param {Length} $screen-max - The maximum width breakpoint
+@mixin respond-between($screen-min, $screen-max) {
+    @media (min-width: #{$screen-min}) and (max-width: #{$screen-max - 0.1}) {
+        @content;
+    }
+}
+
+// =============================================================================
+// SPECIALIZED RESPONSIVE MIXINS
+// =============================================================================
+
+/// Apply styles only on tablet devices
+@mixin only-tablet() {
+    @include respond-between(settings.$screen-md, settings.$screen-lg) {
+        @content;
+    }
+}
+
+/// Apply styles based on named breakpoints
+/// @param {String} $breakpoint - Breakpoint name: phone, tab-port, tab-land, big-desktop
+@mixin respond($breakpoint: phone) {
+    @if $breakpoint == phone {
+        @media (max-width: #{settings.$screen-phone}) {
+            @content;
+        }
+    } @else if $breakpoint == tab-port {
+        @media (max-width: #{settings.$screen-tab-port}) {
+            @content;
+        }
+    } @else if $breakpoint == tab-land {
+        @media (max-width: #{settings.$screen-tab-land}) {
+            @content;
+        }
+    } @else if $breakpoint == big-desktop {
+        @media (min-width: #{settings.$screen-big-desktop}) {
+            @content;
+        }
+    }
+}
+
+// =============================================================================
+// DISPLAY & RESOLUTION MIXINS
+// =============================================================================
+
+/// Apply styles for high-resolution displays
+/// @param {Resolution} $dpi - Minimum resolution (default: 192dpi for 2x)
+@mixin respond-screen-resolution($dpi: 192dpi) {
+    @media (min-resolution: #{$dpi}) {
+        @content;
+    }
+}
+
+/// Apply styles for retina images on mobile+
+@mixin respond-image-2x {
+    @media (min-resolution: 192dpi) and (min-width: #{settings.$screen-phone}) {
+        @content;
+    }
+}
+
+/// Apply styles for dark mode (when enabled in config)
+@mixin dark-mode() {
+    @if settingsConfig.$DARK_THEME_ACTIVE {
+        @media (prefers-color-scheme: dark) {
+            @content;
+        }
+    }
+}
+
+// =============================================================================
+// DEPRECATED MIXINS (Will be removed in future versions)
+// =============================================================================
+
+/// @deprecated IE is no longer supported. This mixin will be removed.
+/// @access private
+@mixin ie-only() {
+    @warn 'ie-only() is deprecated. IE is no longer supported.';
+    // No output - IE support dropped
+}
+
+/// @deprecated Legacy Edge is no longer supported. This mixin will be removed.
+/// @access private
+@mixin legacy-edge() {
+    @warn 'legacy-edge() is deprecated. Legacy Edge is no longer supported.';
+    // No output - Legacy Edge support dropped
+}

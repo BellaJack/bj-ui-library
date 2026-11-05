@@ -1,0 +1,19 @@
+// =============================================================================
+// CONFIGURATION
+// =============================================================================
+// Build-time configuration flags and environment settings.
+// These control compilation behavior and feature flags.
+// =============================================================================
+
+// Environment
+$ENV: 'dev';
+
+// Feature flags
+$AUGMENTED_FONT_CINEMA: false;
+$DEBUG_ACTIVE: false;
+$DARK_THEME_ACTIVE: false;
+
+// Asset paths
+$FONT_PATH_DEV: 'http://localhost:4290/';
+$FONT_PATH_PROD: 'https://www.twentyninelab.com/wp-content/themes/bj-wp-theme/';
+$FONT_PATH: $FONT_PATH_DEV;

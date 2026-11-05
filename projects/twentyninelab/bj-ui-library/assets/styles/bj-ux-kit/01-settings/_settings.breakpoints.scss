@@ -1,0 +1,54 @@
+// =============================================================================
+// BREAKPOINT TOKENS
+// =============================================================================
+// Responsive breakpoint design tokens for media queries.
+// Use with tools.media-queries mixins:
+// - @include tools.respond-above(breakpoints.$screen-tablet) { ... }
+// - @include tools.respond-below(breakpoints.$screen-desktop) { ... }
+// =============================================================================
+
+// Primary breakpoints (px based)
+$screen-xs: 375px; // small phone
+$screen-sm: 576px; // big phone
+$screen-md: 768px; // tablet
+$screen-lg: 1024px; // desktop
+$screen-xl: 1280px; // big desktop
+$screen-xxl: 1440px; // extra big desktop
+$screen-xxxl: 1680px; // cinema
+$screen-hd: 1920px; // hd
+
+// Em-based breakpoints (for special use cases)
+$screen-phone: 37.5em; // 600px
+$screen-tab-port: 56.25em; // 900px
+$screen-tab-land: 75em; // 1200px
+$screen-big-desktop: 112.5em; // 1800px
+
+// Layout constraints
+$screen-max-wrap: 1100px;
+
+// =============================================================================
+// BREAKPOINT MAP (for programmatic iteration)
+// =============================================================================
+
+$breakpoints: (
+    'mobile': $screen-xs,
+    'mobile-lg': $screen-sm,
+    'tablet': $screen-md,
+    'desktop': $screen-lg,
+    'large': $screen-xl,
+    'extra-large': $screen-xxl,
+    'cinema': $screen-xxxl,
+    'hd': $screen-hd
+);
+
+/* Grid Guides */
+/*
+Size | Nr Col | Wrapper Width | Column Width | Gutter Width
+xs   | 9      | 352px         | 32px         | 8px
+sm   | 12     | 560px         | 32px         | 16px
+md   | 12     | 656px         | 40px         | 16px
+lg   | 12     | 960px         | 58px         | 24px
+xl   | 24     | 1136px        | 32px         | 16px
+xxl  | 24     | 1328px        | 40px         | 16px
+xxxl | 24     | 1520px        | 40.333px     | 24px
+*/

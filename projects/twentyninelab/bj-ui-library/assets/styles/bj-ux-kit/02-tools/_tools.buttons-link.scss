@@ -1,0 +1,52 @@
+@use "../01-settings/settings.animations" as settingsAnimations;
+@use "../01-settings/settings.function.rem";
+@use "tools.typo";
+
+@mixin bj-button-base() {
+  @include tools.bj-button-label;
+  align-items: center;
+
+  background: {
+    color: var(--bj-color-button-bg);
+  }
+
+  border: var(--bj-size-button-border-size) solid var(--bj-color-button-border);
+  border-radius: var(--bj-size-button-border-radius);
+  color: var(--bj-color-button-text);
+  cursor: pointer;
+  display: flex;
+
+  font: {
+    weight: var(--bj-font-weight-bold);
+  }
+
+  gap: settings.rem(10px);
+  justify-content: center;
+  min-height: var(--bj-size-button-height);
+  overflow: hidden;
+  padding: var(--bj-size-button-paddig);
+  position: relative;
+
+  text: {
+    align: center;
+    decoration: none;
+  }
+
+  transition: color settingsAnimations.$time-fast ease, background-color settingsAnimations.$time-fast ease;
+
+  &:focus-visible,
+  &:hover {
+    background: {
+      color: var(--bj-color-button-bg-focused);
+    }
+
+    color: var(--bj-color-button-text-focused);
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: auto;
+    opacity: .5;
+    pointer-events: none;
+  }
+}

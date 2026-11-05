@@ -1,0 +1,41 @@
+@use '../01-settings/settings.function.rem' as function;
+
+.bj-round-icon {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+
+    font: {
+        size: function.rem(18px);
+    }
+
+    height: function.rem(44px);
+    justify-content: center;
+    line-height: 1;
+    width: function.rem(44px);
+
+    &--big {
+        font: {
+            size: function.rem(22px);
+        }
+
+        height: function.rem(60px);
+        width: function.rem(60px);
+    }
+
+    &--small {
+        font: {
+            size: function.rem(12px);
+        }
+
+        height: function.rem(24px);
+        width: function.rem(24px);
+    }
+}
+
+.bj-round-icon-text {
+    align-items: center;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--bj-gap-large);
+}

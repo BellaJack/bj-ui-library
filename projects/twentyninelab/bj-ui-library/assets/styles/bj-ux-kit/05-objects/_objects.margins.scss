@@ -1,0 +1,99 @@
+// =============================================================================
+// MARGIN UTILITIES
+// =============================================================================
+// Utility classes for margins using spacing scale.
+// Generated programmatically for consistency and maintainability.
+// =============================================================================
+
+@use '../02-tools/tools.media-queries' as mediaQueries;
+@use 'objects.spacing-config' as config;
+
+// =============================================================================
+// MARGIN GENERATOR MIXIN
+// =============================================================================
+
+@mixin generate-margin-utils($prefix: '', $scale: config.$spacing-scale) {
+    @each $size, $value in $scale {
+        // All margins
+        .u-ma#{$prefix}-#{$size} {
+            margin: #{$value};
+        }
+
+        // Horizontal margin
+        .u-mx#{$prefix}-#{$size} {
+            margin-left: #{$value};
+            margin-right: #{$value};
+        }
+
+        // Vertical margin
+        .u-my#{$prefix}-#{$size} {
+            margin-top: #{$value};
+            margin-bottom: #{$value};
+        }
+
+        // Individual sides
+        .u-mt#{$prefix}-#{$size} {
+            margin-top: #{$value};
+        }
+
+        .u-mr#{$prefix}-#{$size} {
+            margin-right: #{$value};
+        }
+
+        .u-mb#{$prefix}-#{$size} {
+            margin-bottom: #{$value};
+        }
+
+        .u-ml#{$prefix}-#{$size} {
+            margin-left: #{$value};
+        }
+    }
+}
+
+// =============================================================================
+// BASE UTILITIES (Mobile-first)
+// =============================================================================
+
+@include generate-margin-utils();
+
+// Horizontal margins with X-specific CSS custom properties
+@each $size, $value in config.$spacing-scale-x {
+    .u-mx-#{$size} {
+        margin-left: #{$value};
+        margin-right: #{$value};
+    }
+
+    .u-ml-#{$size} {
+        margin-left: #{$value};
+    }
+
+    .u-mr-#{$size} {
+        margin-right: #{$value};
+    }
+}
+
+// =============================================================================
+// RESPONSIVE UTILITIES
+// =============================================================================
+
+@each $bp-name, $bp-value in config.$responsive-breakpoints {
+    @include mediaQueries.respond-above($bp-value) {
+        @include generate-margin-utils('-#{$bp-name}');
+
+        // Responsive horizontal margins with X-specific variables
+        @each $size, $value in config.$spacing-scale-x {
+            .u-mx-#{$bp-name}-#{$size} {
+                margin-left: #{$value};
+                margin-right: #{$value};
+            }
+
+            .u-ml-#{$bp-name}-#{$size} {
+                margin-left: #{$value};
+            }
+
+            .u-mr-#{$bp-name}-#{$size} {
+                margin-right: #{$value};
+            }
+        }
+    }
+}

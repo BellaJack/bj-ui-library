@@ -1,0 +1,11 @@
+// =============================================================================
+// 06-COMPONENTS - UI COMPONENTS (BEM)
+// =============================================================================
+// This layer contains specific UI components styled with BEM methodology.
+// Components use the `c-` prefix by convention (e.g., .c-button, .c-card).
+// Each component should be self-contained and rely only on CSS custom properties.
+// =============================================================================
+
+// Core UI Components
+@forward 'components.layout.main';
+@forward 'components.layout.wrapper';

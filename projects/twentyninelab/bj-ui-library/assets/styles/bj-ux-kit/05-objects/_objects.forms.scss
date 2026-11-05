@@ -1,0 +1,102 @@
+@use '../01-settings/settings.font' as fonts;
+@use '../01-settings/settings.function.rem' as function;
+@use '../01-settings/settings.icon' as icon;
+@use '../01-settings/settings.spacing' as spacing;
+@use '../02-tools/tools.utilities' as tools;
+
+.bj-form {
+    &__row {
+        width: 100%;
+        &__input-wrap {
+            position: relative;
+
+            &--select {
+                &::after {
+                    @include tools.vertical-absolute-centered();
+
+                    content: icon.$icon-arrow-select;
+                    display: inline-block;
+                    line-height: 1;
+                    pointer-events: none;
+                    right: function.rem(20px);
+                }
+            }
+
+            &--date,
+            &--time {
+                &::before {
+                    align-items: center;
+                    aspect-ratio: 1;
+
+                    background: {
+                        color: var(--bj-color-gray-200);
+                    }
+
+                    border-left: 1px solid var(--bj-color-input-border);
+                    border-radius: 0 5px 5px 0;
+                    content: '';
+                    display: flex;
+
+                    font: {
+                        family: fonts.$font-family-icon;
+                        size: function.rem(18px);
+                    }
+
+                    height: calc(100% - 2px);
+                    justify-content: center;
+                    pointer-events: none;
+                    position: absolute;
+                    right: 1px;
+                    top: 1px;
+                }
+            }
+
+            &--date {
+                &::before {
+                    content: '\f783';
+                }
+            }
+
+            &--time {
+                &::before {
+                    content: '\f017';
+                }
+            }
+        }
+
+        &--checkbox,
+        &--radio {
+            font: {
+                weight: fonts.$font-weight-semibold;
+            }
+        }
+
+        &--checkbox {
+            align-items: center;
+            display: flex;
+            gap: function.rem(spacing.$spacing-xs);
+
+            [type="checkbox"] {
+                order: -1;
+            }
+        }
+
+        &--disabled {
+            label {
+                color: var(--bj-input-disabled-label);
+            }
+        }
+    }
+}
+
+.bj-radio-group {
+    .bj-radio {
+        align-items: center;
+        display: flex;
+        gap: function.rem(spacing.$spacing-xs);
+
+        [type="radio"] {
+            order: -1;
+        }
+    }
+}

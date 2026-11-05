@@ -1,0 +1,65 @@
+// =============================================================================
+// SPACING CONFIGURATION
+// =============================================================================
+// Shared spacing configuration for margin and padding utilities.
+// Import this file in both _objects.margins.scss and _objects.paddings.scss
+// =============================================================================
+
+@use '../01-settings/settings.breakpoints' as breakpoints;
+
+// =============================================================================
+// SPACING SCALE (Vertical - Y axis)
+// =============================================================================
+// Uses semantic naming based on "social distance" metaphor
+// =============================================================================
+
+$spacing-scale: (
+    '0': 0,
+    'xxs': var(--bj-spacing-bbfe),
+    'xs': var(--bj-spacing-best-friends),
+    'sm': var(--bj-spacing-close-friends),
+    'md': var(--bj-spacing-closeish-friends),
+    'lg': var(--bj-spacing-friends),
+    'xl': var(--bj-spacing-acquaintances),
+    'xxl': var(--bj-spacing-distant-acquaintances),
+    'xxxl': var(--bj-spacing-stranger)
+);
+
+// =============================================================================
+// SPACING SCALE (Horizontal - X axis)
+// =============================================================================
+
+$spacing-scale-x: (
+    'xxs': var(--u-spacing-x-xxs),
+    'xs': var(--u-spacing-x-xs),
+    'sm': var(--u-spacing-x-sm),
+    'md': var(--u-spacing-x-md),
+    'lg': var(--u-spacing-x-lg),
+    'xl': var(--u-spacing-x-xl),
+    'xxl': var(--u-spacing-x-xxl)
+);
+
+// =============================================================================
+// RESPONSIVE BREAKPOINTS
+// =============================================================================
+
+$responsive-breakpoints: (
+    'md': breakpoints.$screen-md,
+    'lg': breakpoints.$screen-lg,
+    'xl': breakpoints.$screen-xl,
+    'xxl': breakpoints.$screen-xxl
+);
+
+// =============================================================================
+// SPACING DIRECTIONS
+// =============================================================================
+
+$spacing-directions: (
+    'a': ('property-suffix': '', 'sides': ('all')),
+    'x': ('property-suffix': '', 'sides': ('left', 'right')),
+    'y': ('property-suffix': '', 'sides': ('top', 'bottom')),
+    't': ('property-suffix': '-top', 'sides': ('top')),
+    'r': ('property-suffix': '-right', 'sides': ('right')),
+    'b': ('property-suffix': '-bottom', 'sides': ('bottom')),
+    'l': ('property-suffix': '-left', 'sides': ('left'))
+);

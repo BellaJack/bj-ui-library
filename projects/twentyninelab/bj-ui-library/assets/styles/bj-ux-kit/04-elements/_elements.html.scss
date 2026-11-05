@@ -1,0 +1,8 @@
+@use '../01-settings/settings.config' as settings;
+@use '../02-tools/tools.utilities' as tools;
+
+@include tools.debug-css-block(settings.$DEBUG_ACTIVE);
+
+html {
+  font-family: 'Lexend', sans-serif;
+}

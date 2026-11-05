@@ -1,0 +1,219 @@
+@use '../01-settings/settings.colors' as colors;
+
+// =============================================================================
+// CSS CUSTOM PROPERTIES - COLORS
+// =============================================================================
+// Design tokens exposed as CSS Custom Properties for runtime theming.
+// These variables can be overridden via JavaScript or CSS for dark mode support.
+// =============================================================================
+
+:root {
+    --bj-color-black: #{colors.$color-black};
+    --bj-color-white: #{colors.$color-white};
+
+    --bj-color-social-fb: #{colors.$bj-color-social-fb};
+    --bj-color-social-tw: #{colors.$bj-color-social-tw};
+    --bj-color-social-ig: #{colors.$bj-color-social-ig};
+    --bj-color-social-tk: #{colors.$bj-color-social-tk};
+    --bj-color-social-yt: #{colors.$bj-color-social-yt};
+    --bj-color-social-sp: #{colors.$bj-color-social-sp};
+    --bj-color-social-am: #{colors.$bj-color-social-am};
+
+    --bj-color-primary: #{colors.$bj-color-primary};
+    --bj-color-primary-950: #{colors.$bj-color-primary-950};
+    --bj-color-primary-900: #{colors.$bj-color-primary-900};
+    --bj-color-primary-800: #{colors.$bj-color-primary-800};
+    --bj-color-primary-700: #{colors.$bj-color-primary-700};
+    --bj-color-primary-600: #{colors.$bj-color-primary-600};
+    --bj-color-primary-500: #{colors.$bj-color-primary-500};
+    --bj-color-primary-400: #{colors.$bj-color-primary-400};
+    --bj-color-primary-300: #{colors.$bj-color-primary-300};
+    --bj-color-primary-200: #{colors.$bj-color-primary-200};
+    --bj-color-primary-100: #{colors.$bj-color-primary-100};
+    --bj-color-primary-50: #{colors.$bj-color-primary-50};
+
+    --bj-color-secondary: #{colors.$bj-color-secondary};
+    --bj-color-secondary-950: #{colors.$bj-color-secondary-950};
+    --bj-color-secondary-900: #{colors.$bj-color-secondary-900};
+    --bj-color-secondary-800: #{colors.$bj-color-secondary-800};
+    --bj-color-secondary-700: #{colors.$bj-color-secondary-700};
+    --bj-color-secondary-600: #{colors.$bj-color-secondary-600};
+    --bj-color-secondary-500: #{colors.$bj-color-secondary-500};
+    --bj-color-secondary-400: #{colors.$bj-color-secondary-400};
+    --bj-color-secondary-300: #{colors.$bj-color-secondary-300};
+    --bj-color-secondary-200: #{colors.$bj-color-secondary-200};
+    --bj-color-secondary-100: #{colors.$bj-color-secondary-100};
+    --bj-color-secondary-50: #{colors.$bj-color-secondary-50};
+
+    --bj-color-tertiary: #{colors.$bj-color-tertiary};
+    --bj-color-tertiary-950: #{colors.$bj-color-tertiary-950};
+    --bj-color-tertiary-900: #{colors.$bj-color-tertiary-900};
+    --bj-color-tertiary-800: #{colors.$bj-color-tertiary-800};
+    --bj-color-tertiary-700: #{colors.$bj-color-tertiary-700};
+    --bj-color-tertiary-600: #{colors.$bj-color-tertiary-600};
+    --bj-color-tertiary-500: #{colors.$bj-color-tertiary-500};
+    --bj-color-tertiary-400: #{colors.$bj-color-tertiary-400};
+    --bj-color-tertiary-300: #{colors.$bj-color-tertiary-300};
+    --bj-color-tertiary-200: #{colors.$bj-color-tertiary-200};
+    --bj-color-tertiary-100: #{colors.$bj-color-tertiary-100};
+    --bj-color-tertiary-50: #{colors.$bj-color-tertiary-50};
+
+    --bj-color-gray: #{colors.$bj-color-gray};
+    --bj-color-gray-950: #{colors.$bj-color-gray-950};
+    --bj-color-gray-900: #{colors.$bj-color-gray-900};
+    --bj-color-gray-800: #{colors.$bj-color-gray-800};
+    --bj-color-gray-700: #{colors.$bj-color-gray-700};
+    --bj-color-gray-600: #{colors.$bj-color-gray-600};
+    --bj-color-gray-500: #{colors.$bj-color-gray-500};
+    --bj-color-gray-400: #{colors.$bj-color-gray-400};
+    --bj-color-gray-300: #{colors.$bj-color-gray-300};
+    --bj-color-gray-200: #{colors.$bj-color-gray-200};
+    --bj-color-gray-100: #{colors.$bj-color-gray-100};
+    --bj-color-gray-50: #{colors.$bj-color-gray-50};
+
+    --bj-color-error: #{colors.$bj-color-error};
+    --bj-color-error-light: #{colors.$bj-color-error-light};
+    --bj-color-warning: #{colors.$bj-color-warning};
+    --bj-color-warning-light: #{colors.$bj-color-warning-light};
+    --bj-color-success: #{colors.$bj-color-success};
+    --bj-color-success-light: #{colors.$bj-color-success-light};
+
+    --bj-color-body-bg: var(--bj-color-white);
+    --bj-color-body-main: var(--bj-color-gray-900);
+    --bj-color-brd: var(--bj-color-gray-300);
+    --bj-link-color: #7747F0;
+
+    --bj-color-a11y-outline-shadow: rgba(87, 23, 245, .25);
+    --bj-color-a11y-outline: var(--bj-color-gray-950);
+
+    /* Main Color */
+    --bj-color-primary-main: var(--bj-color-primary-800);
+    --bj-color-secondary-main: var(--bj-color-secondary-700);
+    --bj-color-tertiary-main: var(--bj-color-tertiary-700);
+
+    --bj-color-primary-main-on-dark: var(--bj-color-primary-200);
+    --bj-color-secondary-main-on-dark: var(--bj-color-secondary-300);
+    --bj-color-tertiary-main-on-dark: var(--bj-color-tertiary-300);
+
+    /* Button Solid Color */
+    --bj-color-button-bg: var(--bj-color-body-main);
+    --bj-color-button-text: var(--bj-color-white);
+    --bj-color-button-border: var(--bj-color-button-bg);
+    --bj-color-button-bg-focused: transparent;
+    --bj-color-button-text-focused: var(--bj-color-button-bg);
+
+    --bj-color-button-bg-on-dark: var(--bj-color-white);
+    --bj-color-button-text-on-dark: var(--bj-color-body-main);
+    --bj-color-button-bg-on-dark-focused: transparent;
+    --bj-color-button-text-on-dark-focused: var(--bj-color-button-bg-on-dark);
+
+    /* Button Solid Primary Color */
+    --bj-color-button-bg-primary: var(--bj-color-primary-main);
+    --bj-color-button-text-primary: var(--bj-color-white);
+    --bj-color-button-bg-primary-focused: transparent;
+    --bj-color-button-text-primary-focused: var(--bj-color-primary-main);
+
+    --bj-color-button-bg-primary-on-dark: var(--bj-color-primary-main-on-dark);
+    --bj-color-button-text-primary-on-dark: var(--bj-color-body-main);
+    --bj-color-button-bg-primary-on-dark-focused: transparent;
+    --bj-color-button-text-primary-on-dark-focused: var(--bj-color-button-bg-primary-on-dark);
+
+    /* Button Solid Secondary Color */
+    --bj-color-button-bg-secondary: var(--bj-color-secondary-400);
+    --bj-color-button-text-secondary: var(--bj-color-body-main);
+    --bj-color-button-bg-secondary-focused: transparent;
+    --bj-color-button-text-secondary-focused: var(--bj-color-body-main);
+
+    --bj-color-button-bg-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
+    --bj-color-button-text-secondary-on-dark: var(--bj-color-body-main);
+    --bj-color-button-bg-secondary-on-dark-focused: transparent;
+    --bj-color-button-text-secondary-on-dark-focused: var(--bj-color-secondary-main-on-dark);
+
+    /* Button Solid Tertiary Color */
+
+    --bj-color-button-bg-tertiary: var(--bj-color-tertiary-main);
+    --bj-color-button-text-tertiary: var(--bj-color-white);
+    --bj-color-button-bg-tertiary-focused: transparent;
+    --bj-color-button-text-tertiary-focused: var(--bj-color-tertiary-main);
+
+    --bj-color-button-bg-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
+    --bj-color-button-text-tertiary-on-dark: var(--bj-color-body-main);
+    --bj-color-button-bg-tertiary-on-dark-focused: transparent;
+    --bj-color-button-text-tertiary-on-dark-focused: var(--bj-color-tertiary-main-on-dark);
+
+    /* Button Outline Color */
+
+    --bj-color-button-outline-bg: transparent;
+    --bj-color-button-outline-border: var(--bj-color-body-main);
+    --bj-color-button-outline-text: var(--bj-color-body-main);
+    --bj-color-button-outline-text-focused: var(--bj-color-white);
+
+    --bj-color-button-outline-text-on-dark: var(--bj-color-white);
+    --bj-color-button-outline-border-on-dark: var(--bj-color-white);
+    --bj-color-button-outline-bg-on-dark-focused: var(--bj-color-white);
+    --bj-color-button-outline-text-on-dark-focused: var(--bj-color-body-main);
+
+    /* Button Outline Primary Color */
+    --bj-color-button-outline-bg-primary-focused: var(--bj-color-primary-main);
+    --bj-color-button-outline-text-primary-focused: var(--bj-color-white);
+    --bj-color-button-outline-text-primary-on-dark: var(--bj-color-primary-main-on-dark);
+    --bj-color-button-outline-border-primary-on-dark: var(--bj-color-primary-main-on-dark);
+    --bj-color-button-outline-bg-primary-on-dark-focused: var(--bj-color-primary-main-on-dark);
+    --bj-color-button-outline-text-primary-on-dark-focused: var(--bj-color-body-main);
+
+    /* Button Outline Secondary Color */
+
+    --bj-color-button-outline-border-secondary: var(--bj-color-secondary-main);
+    --bj-color-button-outline-text-secondary: var(--bj-color-secondary-main);
+    --bj-color-button-outline-bg-secondary-focused: var(--bj-color-secondary-main);
+    --bj-color-button-outline-text-secondary-focused: var(--bj-color-white);
+    --bj-color-button-outline-text-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
+    --bj-color-button-outline-border-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
+    --bj-color-button-outline-bg-secondary-on-dark-focused: var(--bj-color-secondary-main-on-dark);
+    --bj-color-button-outline-text-secondary-on-dark-focused: var(--bj-color-body-main);
+
+    /* Button Outline Tertiary Color */
+    --bj-color-button-outline-text-tertiary: var(--bj-color-tertiary-main);
+    --bj-color-button-outline-bg-tertiary-focused: var(--bj-color-tertiary-main);
+    --bj-color-button-outline-text-tertiary-focused: var(--bj-color-white);
+    --bj-color-button-outline-text-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
+    --bj-color-button-outline-border-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
+    --bj-color-button-outline-bg-tertiary-on-dark-focused: var(--bj-color-tertiary-main-on-dark);
+    --bj-color-button-outline-text-tertiary-on-dark-focused: var(--bj-color-body-main);
+
+    --bj-color-input-background: var(--bj-color-white);
+    --bj-color-input-text: var(--bj-color-body-main);
+    --bj-color-input-border: var(--bj-color-gray-800);
+    --bj-color-input-placeholder-color: var(--bj-color-gray-700);
+    --bj-color-input-label: var(--bj-color-body-main);
+    --bj-color-input-focused-background: var(--bj-color-gray-50);
+    --bj-color-input-disabled-background: var(--bj-color-gray-200);
+    --bj-input-disabled-border: var(--bj-color-gray-400);
+    --bj-input-disabled-color: var(--bj-color-gray-500);
+    --bj-input-disabled-label: var(--bj-color-gray-500);
+
+    --bj-color-accent-bg: var(--bj-color-body-main);
+    --bj-color-border: var(--bj-color-gray-300);
+    --bj-color-table-border: var(--bj-color-gray-300);
+
+    --bj-color-shadow-01: rgba(2, 6, 23, .08);
+    --bj-color-shadow-02: rgba(2, 6, 23, .1);
+    --bj-color-shadow-03: rgba(2, 6, 23, .14);
+    --bj-color-shadow-04: rgba(2, 6, 23, .16);
+    --bj-color-shadow-05: rgba(2, 6, 23, .24);
+
+    --shadow-color: 247deg 32% 59%;
+    --shadow-elevation-low:
+        0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+        0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+        1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+
+  --bj-surface-border: var(--p-surface-300);
+  --bj-surface-ground: var(--p-surface-100);
+  --bj-surface-card: var(--p-content-background);
+  --bj-surface-overlay: var(--p-overlay-popover-background);
+  --bj-surface-hover: var(--p-content-hover-background);
+  --mask-layout: var(--p-mask-background);
+
+  --bj-surface-shadow: 0 1px 3px 0 rgba(0,0,0,0.05),0 1px 2px -1px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,40 @@
+// =============================================================================
+// SPACING TOKENS
+// =============================================================================
+// Design tokens for spacing. Based on an 8px grid system.
+// These SCSS variables are used to generate CSS Custom Properties.
+// =============================================================================
+
+$spacing-unit: 8px;
+
+// Named spacing scale
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 1.5;
+$spacing-md: $spacing-unit * 2;
+$spacing-lg: $spacing-unit * 3;
+$spacing-xl: $spacing-unit * 4;
+
+// Gutter sizes
+$gutter-small: $spacing-unit * 2;
+$gutter-medium: $spacing-unit * 3;
+$gutter-large: $spacing-unit * 4;
+
+// =============================================================================
+// SPACING MAP (for programmatic iteration)
+// =============================================================================
+// Example: @each $name, $value in spacing.$scale { ... }
+// =============================================================================
+
+$scale: (
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl
+);
+
+$gutters: (
+    'small': $gutter-small,
+    'medium': $gutter-medium,
+    'large': $gutter-large
+);

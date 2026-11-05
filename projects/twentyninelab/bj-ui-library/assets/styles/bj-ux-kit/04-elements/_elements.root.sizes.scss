@@ -1,0 +1,131 @@
+@use '../01-settings/settings.spacing' as spacing;
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../01-settings/settings.sizes' as sizes;
+@use '../01-settings/settings.function.rem' as function;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+
+// =============================================================================
+// CSS CUSTOM PROPERTIES - SPACING & SIZING
+// =============================================================================
+// Design tokens for spacing, sizing, and layout exposed as CSS Custom Properties.
+// These enable consistent spacing throughout the application.
+// =============================================================================
+
+:root {
+    --u-spacing-unit: #{spacing.$spacing-unit};
+
+    --u-spacing-x-xxs: var(--u-spacing-unit);
+    --u-spacing-x-xs: calc(var(--u-spacing-unit) * 2);
+    --u-spacing-x-sm: calc(var(--u-spacing-unit) * 3);
+    --u-spacing-x-md: calc(var(--u-spacing-unit) * 4);
+    --u-spacing-x-lg: calc(var(--u-spacing-unit) * 5);
+    --u-spacing-x-xl: calc(var(--u-spacing-unit) * 6);
+    --u-spacing-x-xxl: calc(var(--u-spacing-unit) * 7);
+
+    --u-spacing-y-xxs: var(--u-spacing-unit);
+    --u-spacing-y-xs: calc(var(--u-spacing-unit) * 2);
+    --u-spacing-y-sm: calc(var(--u-spacing-unit) * 3);
+    --u-spacing-y-md: calc(var(--u-spacing-unit) * 4);
+    --u-spacing-y-lg: calc(var(--u-spacing-unit) * 5);
+    --u-spacing-y-xl: calc(var(--u-spacing-unit) * 6);
+    --u-spacing-y-xxl: calc(var(--u-spacing-unit) * 7);
+
+    --bj-spacing-bbfe: calc(var(--u-spacing-unit) / 2);
+    --bj-spacing-best-friends: var(--u-spacing-unit);
+    --bj-spacing-close-friends: calc(var(--u-spacing-unit) * 2);
+    --bj-spacing-closeish-friends: calc(var(--u-spacing-unit) * 3);
+    --bj-spacing-friends: calc(var(--u-spacing-unit) * 4);
+    --bj-spacing-acquaintances: calc(var(--u-spacing-unit) * 8);
+    --bj-spacing-distant-acquaintances: calc(var(--u-spacing-unit) * 9);
+    --bj-spacing-stranger: calc(var(--u-spacing-unit) * 16);
+
+    --bj-radius-xxs: calc(var(--u-spacing-unit) / 2);
+    --bj-radius-xs: var(--u-spacing-unit);
+    --bj-radius-sm: calc(var(--u-spacing-unit) * 2);
+    --bj-radius-md: calc(var(--u-spacing-unit) * 3);
+
+    --bj-radius-default: var(--bj-radius-xs);
+
+    --bj-wrap-spacing: var(--u-spacing-x-xxs);
+    --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-xs)};
+    
+    --bj-layout-col-gutter: var(--u-spacing-x-xxs);
+    --bj-layout-col-width: var(--u-spacing-x-md);
+
+    --bj-gap: var(--bj-spacing-best-friends);
+    --bj-gap-medium: var(--bj-spacing-close-friends);
+    --bj-gap-large: var(--bj-spacing-closeish-friends);
+    --bj-gap-xl: var(--bj-spacing-acquaintances);
+
+    --bj-size-button-border-radius: var(--bj-radius-xs);
+    --bj-size-button-border-size: 2px;
+    --bj-size-button-font-size: #{function.rem(14px)};
+    --bj-size-button-height: #{function.rem(sizes.$button-height)};
+    --bj-size-button-height-sm: 0;
+    --bj-size-button-height-lg: #{function.rem(60px)};
+    --bj-size-button-paddig: var(--u-spacing-y-xxs) var(--u-spacing-x-md);
+    --bj-size-button-paddig-sm: calc(var(--u-spacing-unit) / 2) var(--u-spacing-x-sm);
+    --bj-size-button-paddig-lg: var(--u-spacing-y-xs) var(--u-spacing-x-lg);
+    --bj-size-button-paddig-xl: var(--u-spacing-y-sm) var(--u-spacing-x-xl);
+    --bj-size-button-square-height: #{function.rem(sizes.$button-square-height)};
+
+    --bj-size-input-border-radius: var(--bj-radius-xs);
+    --bj-size-input-border-size: 2px;
+    --bj-size-input-paddig: var(--u-spacing-y-xxs) var(--u-spacing-x-xs);
+    --bj-size-input-paddig-sm: calc(var(--u-spacing-unit) / 2) var(--u-spacing-x-xs);
+    --bj-size-input-paddig-lg: var(--u-spacing-y-xs) var(--u-spacing-x-xs);
+    --bj-size-input-paddig-xl: var(--u-spacing-y-sm) var(--u-spacing-x-xs);
+
+    --bj-size-section-paddig: var(--bj-spacing-acquaintances);
+    --bj-size-section-paddig-sm: var(--u-spacing-y-md);
+    --bj-size-section-paddig-lg: var(--bj-spacing-distant-acquaintances);
+    --bj-size-section-paddig-xl: var(--bj-spacing-stranger);
+
+    --bj-shadow-xs: 0 2px 6px 0 var(--bj-color-shadow-01);
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-sm) {
+    :root {
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-sm)};
+        --bj-layout-col-gutter: var(--u-spacing-x-xs);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-md) {
+    :root {
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-md)};
+        --bj-layout-col-width: var(--u-spacing-x-lg);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-lg) {
+    :root {
+        --bj-wrap-spacing: #{function.rem(spacing.$spacing-xl)};
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-lg)};
+        --bj-layout-col-width: #{function.rem(58px)};
+        --bj-layout-col-gutter: var(--u-spacing-x-sm);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xl) {
+    :root {
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-xl)};
+        --bj-layout-col-gutter: var(--u-spacing-x-xs);
+        --bj-layout-col-width: var(--u-spacing-x-md);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xxl) {
+    :root {
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-xxl)};
+        --bj-layout-col-width: var(--u-spacing-x-lg);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xxxl) {
+    :root {
+        --bj-wrap-max-width: #{function.rem(sizes.$wrap-max-xxxl)};
+        --bj-layout-col-gutter: var(--u-spacing-x-sm);
+        --bj-layout-col-width: calc(calc(var(--bj-wrap-max-width) - var(--bj-layout-col-gutter) * 23) / 24)
+    }
+}

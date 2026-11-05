@@ -1,0 +1,123 @@
+@use '../02-tools/tools.media-queries' as mediaQueries;
+
+.bj-layer-00dp {
+    background: {
+        color: var(--bj-layer-00dp);
+    }
+}
+
+.bj-layer-01dp {
+    background: {
+        color: var(--bj-layer-01dp);
+    }
+}
+
+.bj-layer-02dp {
+    background: {
+        color: var(--bj-layer-02dp);
+    }
+}
+
+.bj-layer-03dp {
+    background: {
+        color: var(--bj-layer-03dp);
+    }
+}
+
+.bj-layer-04dp {
+    background: {
+        color: var(--bj-layer-04dp);
+    }
+}
+
+.bj-layer-06dp {
+    background: {
+        color: var(--bj-layer-06dp);
+    }
+}
+
+.bj-layer-08dp {
+    background: {
+        color: var(--bj-layer-08dp);
+    }
+}
+
+.bj-layer-12dp {
+    background: {
+        color: var(--bj-layer-12dp);
+    }
+}
+
+.bj-layer-16dp {
+    background: {
+        color: var(--bj-layer-16dp);
+    }
+}
+
+.bj-layer-24dp {
+    background: {
+        color: var(--bj-layer-24dp);
+    }
+}
+
+@include mediaQueries.dark-mode {
+    .bj-layer-dark-00dp {
+        background: {
+            color: var(--bj-layer-00dp);
+        }
+    }
+    
+    .bj-layer-dark-01dp {
+        background: {
+            color: var(--bj-layer-01dp);
+        }
+    }
+    
+    .bj-layer-dark-02dp {
+        background: {
+            color: var(--bj-layer-02dp);
+        }
+    }
+    
+    .bj-layer-dark-03dp {
+        background: {
+            color: var(--bj-layer-03dp);
+        }
+    }
+    
+    .bj-layer-dark-04dp {
+        background: {
+            color: var(--bj-layer-04dp);
+        }
+    }
+    
+    .bj-layer-dark-06dp {
+        background: {
+            color: var(--bj-layer-06dp);
+        }
+    }
+    
+    .bj-layer-dark-08dp {
+        background: {
+            color: var(--bj-layer-08dp);
+        }
+    }
+    
+    .bj-layer-dark-12dp {
+        background: {
+            color: var(--bj-layer-12dp);
+        }
+    }
+    
+    .bj-layer-dark-16dp {
+        background: {
+            color: var(--bj-layer-16dp);
+        }
+    }
+    
+    .bj-layer-dark-24dp {
+        background: {
+            color: var(--bj-layer-24dp);
+        }
+    }
+}

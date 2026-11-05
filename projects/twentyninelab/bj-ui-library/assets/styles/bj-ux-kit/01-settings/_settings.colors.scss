@@ -1,0 +1,231 @@
+// =============================================================================
+// COLOR TOKENS
+// =============================================================================
+// Design tokens for colors. These SCSS variables are used to generate
+// CSS Custom Properties in 04-elements/_elements.root.colors.scss
+// =============================================================================
+
+@use 'sass:map';
+
+// -----------------------------------------------------------------------------
+// Base Colors
+// -----------------------------------------------------------------------------
+$color-white: #fdfcff;
+$color-black: #1a1a1a;
+
+// -----------------------------------------------------------------------------
+// Primary Color Scale (Purple)
+// -----------------------------------------------------------------------------
+$bj-color-primary: oklch(30.97% 0.18059 264.715);
+$bj-color-primary-950: oklch(24.748% 0.14193 265.305);
+$bj-color-primary-900: $bj-color-primary;
+$bj-color-primary-800: oklch(42.438% 0.27044 264.227);
+$bj-color-primary-700: oklch(46.695% 0.30317 264.222);
+$bj-color-primary-600: oklch(47.096% 0.30046 264.227);
+$bj-color-primary-500: oklch(52.383% 0.26528 264.947);
+$bj-color-primary-400: oklch(61.848% 0.20533 264.22);
+$bj-color-primary-300: oklch(74.115% 0.13367 260.356);
+$bj-color-primary-200: oklch(84.104% 0.07947 257.94);
+$bj-color-primary-100: oklch(91.249% 0.04288 255.967);
+$bj-color-primary-50: oklch(95.134% 0.02352 256.177);
+
+$bj-color-secondary: oklch(64.343% 0.11058 191.701);
+$bj-color-secondary-950: oklch(29.117% 0.04958 196.921);
+$bj-color-secondary-900: oklch(40.547% 0.06494 193.46);
+$bj-color-secondary-800: oklch(46.313% 0.07674 194.869);
+$bj-color-secondary-700: oklch(54.579% 0.09278 192.895);
+$bj-color-secondary-600: $bj-color-secondary;
+$bj-color-secondary-500: oklch(75.391% 0.13031 189.112);
+$bj-color-secondary-400: oklch(83.479% 0.14206 187.494);
+$bj-color-secondary-300: oklch(89.238% 0.1388 185.363);
+$bj-color-secondary-200: oklch(92.937% 0.10543 185.221);
+$bj-color-secondary-100: oklch(95.969% 0.05742 185.622);
+$bj-color-secondary-50: oklch(98.541% 0.01595 187.749);
+
+$bj-color-tertiary: oklch(55.754% 0.2526 302.319);
+$bj-color-tertiary-950: oklch(29.052% 0.1433 302.715);
+$bj-color-tertiary-900: oklch(38.074% 0.16615 304.984);
+$bj-color-tertiary-800: oklch(43.828% 0.19842 303.722);
+$bj-color-tertiary-700: oklch(49.552% 0.23697 301.923);
+$bj-color-tertiary-600: $bj-color-tertiary;
+$bj-color-tertiary-500: oklch(64.305% 0.22448 304.566);
+$bj-color-tertiary-400: oklch(72.168% 0.17679 305.493);
+$bj-color-tertiary-300: oklch(82.676% 0.10833 306.357);
+$bj-color-tertiary-200: oklch(90.236% 0.0605 306.65);
+$bj-color-tertiary-100: oklch(94.643% 0.03284 307.067);
+$bj-color-tertiary-50: oklch(97.685% 0.01429 308.033);
+
+$bj-color-gray: $color-black;
+$bj-color-gray-950: oklch(12.88% 0.04062 264.709);
+$bj-color-gray-900: oklch(20.768% 0.03985 265.767);
+$bj-color-gray-800: oklch(27.95% 0.03688 260.049);
+$bj-color-gray-700: oklch(37.17% 0.0392 257.31);
+$bj-color-gray-600: oklch(44.554% 0.0375 257.307);
+$bj-color-gray-500: oklch(55.439% 0.04078 257.446);
+$bj-color-gray-400: oklch(71.068% 0.0352 256.828);
+$bj-color-gray-300: oklch(86.898% 0.01994 252.99);
+$bj-color-gray-200: oklch(92.876% 0.01272 255.643);
+$bj-color-gray-100: oklch(96.826% 0.00696 248.26);
+$bj-color-gray-50: oklch(98.415% 0.00352 248.585);
+
+$bj-color-dark-gray-950: $bj-color-gray-950;
+$bj-color-dark-gray-900: oklch(20.793% 0.0221 276.321);
+$bj-color-dark-gray-800: oklch(21.565% 0.02222 272.607);
+$bj-color-dark-gray-700: oklch(23.187% 0.02221 269.102);
+$bj-color-dark-gray-600: oklch(24.784% 0.0223 265.718);
+$bj-color-dark-gray-500: oklch(27.995% 0.02214 262.509);
+$bj-color-dark-gray-400: oklch(33.264% 0.02068 265.968);
+$bj-color-dark-gray-300: oklch(39.308% 0.013 261.786);
+$bj-color-dark-gray-200: oklch(41.686% 0.01032 271.172);
+$bj-color-dark-gray-100: oklch(43.213% 0.00833 276.962);
+$bj-color-dark-gray-50: oklch(43.873% 0.0051 271.305);
+
+$bj-color-error: oklch(56.209% 0.22458 28.64);
+$bj-color-error-light: oklch(93.218% 0.03429 17.615);
+$bj-color-warning: oklch(87.896% 0.15335 91.611);
+$bj-color-warning-light: oklch(96.19% 0.05793 95.632);
+$bj-color-success: oklch(52.731% 0.13709 150.091);
+$bj-color-success-light: oklch(96.242% 0.04334 156.874);
+
+$bj-color-social-fb: oklch(47.243% 0.10839 263.593);
+$bj-color-social-tw: oklch(70.228% 0.14833 234.676);
+$bj-color-social-ig: oklch(54.965% 0.20382 344.462);
+$bj-color-social-tk: oklch(100% 0.00011 271.152);
+$bj-color-social-yt: oklch(49.736% 0.20411 29.223);
+$bj-color-social-sp: oklch(68.884% 0.18695 148.941);
+$bj-color-social-am: oklch(66.374% 0.20863 21.532);
+
+// temp color a11y-rebels
+// light blue
+// $bj-color-primary-50: #f3f8fc;
+// $bj-color-primary-100: #e5f1f9;
+// $bj-color-primary-200: #c6e3f1;
+// $bj-color-primary-300: #acd8eb; // primary
+// $bj-color-primary-400: #5bb3d5;
+// $bj-color-primary-500: #3599c2;
+// $bj-color-primary-600: #257ca4;
+// $bj-color-primary-700: #1f6385;
+// $bj-color-primary-800: #1e546e;
+// $bj-color-primary-900: #1e465c;
+// $bj-color-primary-950: #142e3d;
+
+// // green
+// $bj-color-secondary-50: #f0f9f3;
+// $bj-color-secondary-100: #dbf0e1;
+// $bj-color-secondary-200: #b9e1c7;
+// $bj-color-secondary-300: #74c194; // primary
+// $bj-color-secondary-400: #59ae7f;
+// $bj-color-secondary-500: #379263;
+// $bj-color-secondary-600: #27744e;
+// $bj-color-secondary-700: #1f5d3f;
+// $bj-color-secondary-800: #1b4a34;
+// $bj-color-secondary-900: #173d2c;
+// $bj-color-secondary-950: #0c2219;
+
+// // blue
+// $bj-color-tertiary-50: #f1f8fd;
+// $bj-color-tertiary-100: #e0eff9;
+// $bj-color-tertiary-200: #c7e3f6;
+// $bj-color-tertiary-300: #a1d2ef;
+// $bj-color-tertiary-400: #75b8e5;
+// $bj-color-tertiary-500: #509adc; // primary
+// $bj-color-tertiary-600: #4082d0;
+// $bj-color-tertiary-700: #366ebf;
+// $bj-color-tertiary-800: #325a9b;
+// $bj-color-tertiary-900: #2d4d7b;
+// $bj-color-tertiary-950: #1f304c;
+
+// yellow
+// $bj-color-tertiary-50: #fdfaed;
+// $bj-color-tertiary-100: #f9efcc;
+// $bj-color-tertiary-200: #f3dd94;
+// $bj-color-tertiary-300: #f0d077;
+// $bj-color-tertiary-400: #e9b236;
+// $bj-color-tertiary-500: #e1931f;
+// $bj-color-tertiary-600: #c77118;
+// $bj-color-tertiary-700: #a55118;
+// $bj-color-tertiary-800: #874019;
+// $bj-color-tertiary-900: #6f3418;
+// $bj-color-tertiary-950: #3f1a09;
+
+// =============================================================================
+// COLOR MAPS (for programmatic iteration)
+// =============================================================================
+// Use these maps to generate CSS custom properties, utility classes, etc.
+// Example: @each $name, $value in colors.$primary-scale { ... }
+// =============================================================================
+
+$primary-scale: (
+    '50': $bj-color-primary-50,
+    '100': $bj-color-primary-100,
+    '200': $bj-color-primary-200,
+    '300': $bj-color-primary-300,
+    '400': $bj-color-primary-400,
+    '500': $bj-color-primary-500,
+    '600': $bj-color-primary-600,
+    '700': $bj-color-primary-700,
+    '800': $bj-color-primary-800,
+    '900': $bj-color-primary-900,
+    '950': $bj-color-primary-950
+);
+
+$secondary-scale: (
+    '50': $bj-color-secondary-50,
+    '100': $bj-color-secondary-100,
+    '200': $bj-color-secondary-200,
+    '300': $bj-color-secondary-300,
+    '400': $bj-color-secondary-400,
+    '500': $bj-color-secondary-500,
+    '600': $bj-color-secondary-600,
+    '700': $bj-color-secondary-700,
+    '800': $bj-color-secondary-800,
+    '900': $bj-color-secondary-900,
+    '950': $bj-color-secondary-950
+);
+
+$tertiary-scale: (
+    '50': $bj-color-tertiary-50,
+    '100': $bj-color-tertiary-100,
+    '200': $bj-color-tertiary-200,
+    '300': $bj-color-tertiary-300,
+    '400': $bj-color-tertiary-400,
+    '500': $bj-color-tertiary-500,
+    '600': $bj-color-tertiary-600,
+    '700': $bj-color-tertiary-700,
+    '800': $bj-color-tertiary-800,
+    '900': $bj-color-tertiary-900,
+    '950': $bj-color-tertiary-950
+);
+
+$gray-scale: (
+    '50': $bj-color-gray-50,
+    '100': $bj-color-gray-100,
+    '200': $bj-color-gray-200,
+    '300': $bj-color-gray-300,
+    '400': $bj-color-gray-400,
+    '500': $bj-color-gray-500,
+    '600': $bj-color-gray-600,
+    '700': $bj-color-gray-700,
+    '800': $bj-color-gray-800,
+    '900': $bj-color-gray-900,
+    '950': $bj-color-gray-950
+);
+
+$semantic-colors: (
+    'error': $bj-color-error,
+    'error-light': $bj-color-error-light,
+    'warning': $bj-color-warning,
+    'warning-light': $bj-color-warning-light,
+    'success': $bj-color-success,
+    'success-light': $bj-color-success-light
+);
+
+$social-colors: (
+    'fb': $bj-color-social-fb,
+    'tw': $bj-color-social-tw,
+    'ig': $bj-color-social-ig,
+    'tk': $bj-color-social-tk,
+    'yt': $bj-color-social-yt,
+    'sp': $bj-color-social-sp,
+    'am': $bj-color-social-am
+);

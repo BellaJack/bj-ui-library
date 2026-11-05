@@ -1,0 +1,14 @@
+.bj-block-image {
+    & {
+        overflow: hidden;
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.bj-critical-image {
+    filter: blur(15px);
+}

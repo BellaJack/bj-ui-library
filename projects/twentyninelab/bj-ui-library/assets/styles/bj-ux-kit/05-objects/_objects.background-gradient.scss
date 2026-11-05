@@ -1,0 +1,25 @@
+@use '../01-settings/settings.colors' as colors;
+
+.bj-bg-grad-primary-50-c {
+    background: linear-gradient(180deg, var(--bj-color-primary-50) .74%, colors.$color-white 76.68%);
+}
+
+.bj-bg-grad-primary-50-l {
+    background: linear-gradient(165deg, var(--bj-color-primary-50),hsla(0, 0%, 100%, 0) 45%);
+}
+
+.bj-bg-grad-primary-50-r {
+    background: linear-gradient(190deg, var(--bj-color-primary-50),hsla(0, 0%, 100%, 0) 45%);
+}
+
+.bj-bg-grad-secondary-50-c {
+    background: linear-gradient(180deg, var(--bj-color-secondary-50) .74%, colors.$color-white 76.68%);
+}
+
+.bj-bg-grad-secondary-50-l {
+    background: linear-gradient(165deg, var(--bj-color-secondary-50),hsla(0, 0%, 100%, 0) 45%);
+}
+
+.bj-bg-grad-secondary-50-r {
+    background: linear-gradient(190deg, var(--bj-color-secondary-50),hsla(0, 0%, 100%, 0) 45%);
+}

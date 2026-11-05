@@ -1,0 +1,42 @@
+// =============================================================================
+// FONT TOKENS
+// =============================================================================
+// Design tokens for font families and weights.
+// These values are used to generate CSS Custom Properties.
+// =============================================================================
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Font sizes
+$font-size-default: 16px;
+$font-size-icon: 18px;
+
+// Font families
+$font-family-icon: 'Font Awesome 6 Free';
+$font-family-default: 'Lexend', Arial;
+$font-family-header: 'Lexend', Arial;
+
+// =============================================================================
+// FONT MAPS (for programmatic iteration)
+// =============================================================================
+
+$weights: (
+    'light': $font-weight-light,
+    'regular': $font-weight-regular,
+    'medium': $font-weight-medium,
+    'semibold': $font-weight-semibold,
+    'bold': $font-weight-bold,
+    'extrabold': $font-weight-extrabold
+);
+
+$families: (
+    'default': $font-family-default,
+    'header': $font-family-header,
+    'icon': $font-family-icon
+);

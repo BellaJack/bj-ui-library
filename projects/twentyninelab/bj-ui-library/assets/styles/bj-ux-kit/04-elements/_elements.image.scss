@@ -1,0 +1,11 @@
+figcaption {
+    font: {
+        size: var(--bj-typo-small);
+        size: var(--bj-typo-small-clamp);
+        style: italic;
+    }
+
+    line-height: normal;
+    text-align: center;
+    text-wrap: balance;
+}

@@ -1,0 +1,139 @@
+@use "../01-settings/settings.colors" as settingsColors;
+@use "../01-settings/settings.spacing";
+
+@function get-ratio($width: 100, $height: 100) {
+  @return (100% * $height) / $width;
+}
+
+@function get-height($width: 100, $ratio: 1.46) {
+  @return $width / $ratio;
+}
+
+@mixin aspect-ratio($width, $ratio, $selector: 'img') {
+  $ratio-height: get-height($width, $ratio);
+  position: relative;
+
+  padding: {
+    bottom: get-ratio($width, $ratio-height);
+  }
+
+  >#{$selector} {
+    position: absolute;
+
+    @if($selector !='img') {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@mixin a11y-outline($offset: -3px, $outline-size: 3px, $shadow: 0, $shadowblur: 0) {
+  box-shadow: 0 0 $shadow $shadowblur var(--bj-color-a11y-outline-shadow);
+  outline: $outline-size solid var(--bj-color-a11y-outline);
+  outline-offset: $offset;
+}
+
+@mixin a11y-outline-keyboard($offset: -2px, $outline-size: 8px, $shadow: 4px) {
+  border-color: var(--bj-color-a11y-outline);
+  box-shadow: 0 0 0 $shadow var(--bj-color-a11y-outline-shadow);
+  outline: $outline-size double var(--bj-color-a11y-outline);
+  outline-offset: $offset;
+}
+
+@mixin visually-hidden($focusable: false) {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  display: block;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  @if ($focusable) {
+
+    &:active,
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+      padding: .5rem;
+    }
+  }
+}
+
+@mixin revert-visually-hidden {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+@mixin calc-col-width($columns: 2) {
+  width: calc((100% - #{settings.$gutter-medium} * #{$columns - 1})/#{$columns});
+}
+
+@mixin background-linear ($color: settingsColors.$color-white, $color-second: $color-gray-5) {
+  background: linear-gradient($color, $color-second);
+  @content;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-centered($transform: translate(-50%, -50%)) {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: $transform;
+}
+
+@mixin vertical-absolute-centered($transform: translateY(-50%)) {
+  position: absolute;
+  top: 50%;
+  transform: $transform;
+}
+
+@mixin debug-css-block($active: false) {
+	@if $active {
+		html * {
+			background: rgba(130, 226, 255, 0.1);
+			box-shadow: 0 0 0 1px #00c4ff;
+		}
+	}
+}
+
+@mixin custom-scrollbar($size: 3px, $bgColor: settingsColors.$color-white, $thumbColor: var(--bj-color-gray-500)) {
+  scrollbar-color: $thumbColor $bgColor;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track {
+    background-color: $bgColor !important;
+    box-shadow: 0 !important
+  }
+  
+  &::-webkit-scrollbar {
+    background-color: $bgColor !important;
+    height: $size !important;
+    width: $size !important;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+    border: 0 !important;
+    border-radius: 10px;
+  }
+}

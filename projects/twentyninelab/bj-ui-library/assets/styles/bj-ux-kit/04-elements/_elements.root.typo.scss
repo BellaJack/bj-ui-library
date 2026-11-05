@@ -1,0 +1,35 @@
+@use '../01-settings/settings.function.rem' as function;
+@use '../01-settings/settings.typography' as typo;
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.fluid' as fluid;
+
+:root {
+    --bj-typo-display-1: #{function.rem(typo.$font-size-h1-md)};
+    --bj-typo-display-1-clamp: #{fluid.fluid(typo.$font-size-h1-md, typo.$font-size-h1-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-display-2: #{function.rem(typo.$font-size-h2-md)};
+    --bj-typo-display-2-clamp: #{fluid.fluid(typo.$font-size-h2-md, typo.$font-size-h2-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-display-3: #{function.rem(typo.$font-size-h3-md)};
+    --bj-typo-display-3-clamp: #{fluid.fluid(typo.$font-size-h3-md, typo.$font-size-h3-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-display-4: #{function.rem(typo.$font-size-h4-md)};
+    --bj-typo-display-4-clamp: #{fluid.fluid(typo.$font-size-h4-md, typo.$font-size-h4-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-display-5: #{function.rem(typo.$font-size-h5-md)};
+    --bj-typo-display-5-clamp: #{fluid.fluid(typo.$font-size-h5-md, typo.$font-size-h5-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-display-6: #{function.rem(typo.$font-size-h6-md)};
+    --bj-typo-display-6-clamp: #{fluid.fluid(typo.$font-size-h6-md, typo.$font-size-h6-lg, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h1: #{function.rem(typo.$font-size-h1-xs)};
+    --bj-typo-h1-clamp: #{fluid.fluid(typo.$font-size-h1-xs, typo.$font-size-h1, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h2: #{function.rem(typo.$font-size-h2-xs)};
+    --bj-typo-h2-clamp: #{fluid.fluid(typo.$font-size-h2-xs, typo.$font-size-h2, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h3: #{function.rem(typo.$font-size-h3-xs)};
+    --bj-typo-h3-clamp: #{fluid.fluid(typo.$font-size-h3-xs, typo.$font-size-h3, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h4: #{function.rem(typo.$font-size-h4-xs)};
+    --bj-typo-h4-clamp: #{fluid.fluid(typo.$font-size-h4-xs, typo.$font-size-h4, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h5: #{function.rem(typo.$font-size-h5-xs)};
+    --bj-typo-h5-clamp: #{fluid.fluid(typo.$font-size-h5-xs, typo.$font-size-h5, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-h6: #{function.rem(typo.$font-size-h6-xs)};
+    --bj-typo-h6-clamp: #{fluid.fluid(typo.$font-size-h6-xs, typo.$font-size-h6, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-default: #{function.rem(typo.$font-size-text)};
+    --bj-typo-default-clamp: #{fluid.fluid(typo.$font-size-text, typo.$font-size-h6-xs, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+    --bj-typo-small: #{function.rem(typo.$font-size-small-xs)};
+    --bj-typo-small-clamp: #{fluid.fluid(typo.$font-size-small-xs, typo.$font-size-small, breakpoints.$screen-xs, breakpoints.$screen-xl)};
+}

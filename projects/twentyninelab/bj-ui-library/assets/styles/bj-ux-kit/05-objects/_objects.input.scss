@@ -1,0 +1,137 @@
+@use '../01-settings/settings.font' as fonts;
+@use '../01-settings/settings.function.rem' as function;
+@use '../02-tools/tools.forms' as tools;
+
+.bj-input {
+    @include tools.form-element-base;
+}
+
+.bj-input-outline {
+    --bj-color-input-background: transparent;
+}
+
+.bj-input-on-dark {
+    --bj-color-input-background: rgba(255, 255, 255, .08);
+    --bj-color-input-border: var(--bj-color-white);
+    --bj-color-input-disabled-background: rgba(255, 255, 255, .05);
+    --bj-color-input-focused-background: rgba(255, 255, 255, .14);
+}
+
+.bj-input-small {
+    --bj-size-input-height: var(--bj-size-input-height-sm);
+    --bj-size-input-paddig: var(--bj-size-input-paddig-sm);
+}
+
+.bj-input-large {
+    --bj-size-input-paddig: var(--bj-size-input-paddig-lg);
+}
+
+.bj-input-extra-large {
+    --bj-size-input-paddig: var(--bj-size-input-paddig-xl);
+}
+
+.bj-input-cta {
+    align-items: stretch;
+    display: flex;
+
+    input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border-right: 0;
+    }
+
+    button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+.bj-input-icon,
+.bj-input-unit {
+    position: relative;
+    width: fit-content;
+}
+
+.bj-input-icon::before,
+.bj-input-unit::after  {
+    align-items: center;
+    aspect-ratio: 1;
+    content: '';
+    display: flex;
+
+    font: {
+        family: fonts.$font-family-icon;
+        size: function.rem(fonts.$font-size-icon);
+    }
+
+    height: calc(100% - 4px);
+    justify-content: center;
+    pointer-events: none;
+    position: absolute;
+    top: 2px;
+    z-index: 1;
+}
+
+.bj-input-icon {
+    &::before {
+        left: 4px;
+    }
+
+    &--search {
+        &::before {
+            content: '\f002';
+
+            font: {
+                weight: 900;
+            }
+        }
+    }
+
+    input {
+        padding: {
+            left: var(--u-spacing-x-lg);
+        }
+    }
+}
+
+.bj-input-unit {
+    &::after {
+        background: {
+            color: var(--bj-color-gray-200);
+        }
+
+        border-left: 1px solid var(--bj-color-gray-400);
+        border-radius: 0 calc(var(--bj-size-input-border-radius) - 2px) calc(var(--bj-size-input-border-radius) - 2px) 0;
+        content: attr(data-unit);
+
+        font: {
+            weight: var(--bj-font-weight-bold);
+        }
+
+        right: 2px;
+    }
+
+    input {
+        padding: {
+            right: var(--u-spacing-x-lg);
+        }
+
+        width: 100%;
+    }
+
+    &:focus-within {
+        &::after {
+            height: calc(100% - 6px);
+            right: 3px;
+            top: 3px;
+        }
+    }
+
+    &.bj-input-on-dark {
+        &::after {
+            background: {
+                color: transparent;
+            }
+        }
+    }
+}

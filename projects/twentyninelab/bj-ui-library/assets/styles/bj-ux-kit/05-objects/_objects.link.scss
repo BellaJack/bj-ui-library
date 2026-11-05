@@ -1,0 +1,19 @@
+@use '../01-settings/settings.font' as fonts;
+
+.bj-link {
+    font: {
+        weight: fonts.$font-weight-bold;
+    }
+}
+
+.bj-link-hover {
+    text: {
+        decoration: none;
+    }
+
+    &:hover &__hover {
+        text: {
+            decoration: underline;
+        }
+    }
+}

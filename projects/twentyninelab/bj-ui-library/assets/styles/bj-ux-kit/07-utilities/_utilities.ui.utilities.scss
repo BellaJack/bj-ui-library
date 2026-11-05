@@ -1,0 +1,172 @@
+// =============================================================================
+// UI UTILITIES
+// =============================================================================
+// Single-purpose utility classes generated programmatically.
+// Uses maps and @each loops for maintainability and consistency.
+// =============================================================================
+
+@use 'sass:map';
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+@use '../02-tools/tools.utilities' as tools;
+
+// =============================================================================
+// CONFIGURATION MAPS
+// =============================================================================
+
+// Width utilities map
+$width-values: (
+    '25': 25%,
+    '50': 50%,
+    '75': 75%,
+    '80': 80%,
+    'full': 100%
+);
+
+// Max-width utilities map
+$max-width-values: (
+    '500': 500px,
+    '600': 600px,
+    'unset': unset
+);
+
+// Position utilities map
+$position-values: (
+    'relative': relative,
+    'absolute': absolute
+);
+
+// Responsive breakpoints map (prefix => breakpoint value)
+$responsive-breakpoints: (
+    'md': breakpoints.$screen-md,
+    'lg': breakpoints.$screen-lg,
+    'xl': breakpoints.$screen-xl,
+    'xxl': breakpoints.$screen-xxl
+);
+
+// =============================================================================
+// PLACEHOLDERS
+// =============================================================================
+
+%margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// =============================================================================
+// BASE UTILITIES (No breakpoint prefix)
+// =============================================================================
+
+.u-wrap {
+    padding-left: var(--bj-wrap-spacing);
+    padding-right: var(--bj-wrap-spacing);
+}
+
+.u-wrap-medium {
+    @extend %margin-auto;
+    max-width: var(--bj-wrap-max-width);
+}
+
+.u-inner-wrap {
+    @extend %margin-auto;
+    width: 80%;
+}
+
+.u-v-hidden {
+    @include tools.visually-hidden;
+}
+
+.u-m-auto {
+    @extend %margin-auto;
+}
+
+.u-h-100 {
+    height: 100%;
+}
+
+.u-ow-hidden {
+    overflow: hidden;
+}
+
+.bj-divider {
+    background-color: var(--bj-color-gray-200);
+    height: 1px;
+}
+
+// Generate base width utilities
+@each $name, $value in $width-values {
+    .u-w-#{$name} {
+        width: $value;
+    }
+}
+
+// Generate base max-width utilities
+@each $name, $value in $max-width-values {
+    .u-mw-#{$name} {
+        max-width: $value;
+    }
+}
+
+// Generate base position utilities
+@each $name, $value in $position-values {
+    .u-pos-#{$name} {
+        position: $value;
+    }
+}
+
+// =============================================================================
+// RESPONSIVE UTILITIES (Generated with @each loops)
+// =============================================================================
+
+@each $bp-name, $bp-value in $responsive-breakpoints {
+    @include mediaQueries.respond-above($bp-value) {
+        // Width utilities
+        @each $name, $value in $width-values {
+            .u-#{$bp-name}-w-#{$name} {
+                width: $value;
+            }
+        }
+
+        // Max-width utilities
+        @each $name, $value in $max-width-values {
+            .u-#{$bp-name}-mw-#{$name} {
+                max-width: $value;
+            }
+        }
+
+        // Position utilities
+        @each $name, $value in $position-values {
+            .u-#{$bp-name}-pos-#{$name} {
+                position: $value;
+            }
+        }
+    }
+}
+
+// =============================================================================
+// VISIBILITY UTILITIES
+// =============================================================================
+
+@include mediaQueries.respond-below(breakpoints.$screen-md) {
+    .bj-mob-tab-hide {
+        display: none;
+    }
+}
+
+@include mediaQueries.respond-below(breakpoints.$screen-lg) {
+    .bj-mob-dsk-hide {
+        display: none;
+    }
+}
+
+@include mediaQueries.respond-below(breakpoints.$screen-xl) {
+    .bj-mob-hide {
+        display: none;
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xl) {
+    .bj-xl-hide {
+        display: none;
+    }
+}

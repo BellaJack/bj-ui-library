@@ -1,0 +1,70 @@
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+
+// Breakpoint prefixes
+$breakpoints-map: (
+    'xs': null,
+    'md': breakpoints.$screen-md,
+    'lg': breakpoints.$screen-lg,
+    'xl': breakpoints.$screen-xl,
+    'xxl': breakpoints.$screen-xxl
+);
+
+// Grid columns count
+$grid-columns: (2, 3, 4, 5, 6);
+$grid-spans: (2, 3, 4, 5);
+$grid-orders: (1, 2, 3, 4, 5, 6);
+
+// Generate grid utilities
+@mixin generate-grid-utilities($prefix) {
+    @each $cols in $grid-columns {
+        .bj-grid--#{$prefix}-#{$cols} {
+            grid-template-columns: repeat($cols, 1fr);
+        }
+    }
+
+    @each $span in $grid-spans {
+        .bj-grid-col-#{$prefix}-#{$span} {
+            grid-column: auto / span $span;
+        }
+
+        .bj-grid-row-#{$prefix}-#{$span} {
+            grid-row: auto / span $span;
+        }
+    }
+
+    @each $order in $grid-orders {
+        .bj-grid-col-or-#{$prefix}-#{$order} {
+            grid-column: $order;
+        }
+
+        .bj-grid-row-or-#{$prefix}-#{$order} {
+            grid-row: $order;
+        }
+    }
+
+    .bj-grid-col-#{$prefix}-full {
+        grid-column: 1 / -1;
+    }
+}
+
+// Base grid
+.bj-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &-col {
+        grid-column: auto / span 1;
+    }
+}
+
+// Generate utilities for all breakpoints
+@each $prefix, $breakpoint in $breakpoints-map {
+    @if $breakpoint {
+        @include mediaQueries.respond-above($breakpoint) {
+            @include generate-grid-utilities($prefix);
+        }
+    } @else {
+        @include generate-grid-utilities($prefix);
+    }
+}

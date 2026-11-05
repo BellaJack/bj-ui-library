@@ -1,0 +1,35 @@
+// =============================================================================
+// 01-SETTINGS - DESIGN TOKENS (No CSS Output)
+// =============================================================================
+// This file aggregates and forwards all design token modules.
+// Use `@use 'path/to/01-settings' as settings;` to access all tokens.
+//
+// Available namespaces after import:
+// - settings.colors (color tokens)
+// - settings.typography (font sizes)
+// - settings.spacing (spacing units)
+// - settings.breakpoints (responsive breakpoints)
+// - settings.font (font families & weights)
+// - settings.sizes (component sizes)
+// - settings.animations (timing & easing)
+// - settings.z-layers (z-index layers)
+// - settings.config (configuration flags)
+// - settings.icon (icon settings)
+// - settings.svg (svg settings)
+// =============================================================================
+
+// Functions (must be loaded first as other modules depend on them)
+@forward 'settings.function.rem';
+
+// Core design tokens
+@forward 'settings.colors';
+@forward 'settings.typography';
+@forward 'settings.spacing';
+@forward 'settings.breakpoints';
+@forward 'settings.font';
+@forward 'settings.sizes';
+@forward 'settings.animations';
+@forward 'settings.z-layers';
+@forward 'settings.config';
+@forward 'settings.icon';
+@forward 'settings.svg';

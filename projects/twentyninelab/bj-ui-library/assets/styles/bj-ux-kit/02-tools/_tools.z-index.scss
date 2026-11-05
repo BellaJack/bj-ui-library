@@ -1,0 +1,24 @@
+@use "sass:map";
+@function z-index($layer) {
+  // z-index list
+  // -------------------------------------------------------------------------------------
+  // please define here every absolute/fixed/sticky positioned layer
+  // please choose one of the "main" groups (100 z-index slots available for every group)
+  // -------------------------------------------------------------------------------------
+
+  // prettier-ignore
+  $z-layers: ('under-all': -1,
+      'base': 1,
+      'hover': 2,
+      'header': 100,
+      'mainMenuShadow': 102,
+      'mainMenu': 103,
+      'menuToggler': 110,
+      'modalShadow': 9998);
+
+  @if not map.has-key($z-layers, $layer) {
+    @warn 'No layer found in $z-layers map for `#{$layer}`. Property omitted.';
+  }
+
+  @return map.get($z-layers, $layer);
+}

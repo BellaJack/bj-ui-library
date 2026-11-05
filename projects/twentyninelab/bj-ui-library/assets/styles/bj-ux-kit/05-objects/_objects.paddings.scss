@@ -1,0 +1,120 @@
+// =============================================================================
+// PADDING UTILITIES
+// =============================================================================
+// Utility classes for paddings using spacing scale.
+// Generated programmatically for consistency and maintainability.
+// =============================================================================
+
+@use '../02-tools/tools.media-queries' as mediaQueries;
+@use 'objects.spacing-config' as config;
+
+// =============================================================================
+// PADDING GENERATOR MIXIN
+// =============================================================================
+
+@mixin generate-padding-utils($prefix: '', $scale: config.$spacing-scale) {
+    @each $size, $value in $scale {
+        // All padding
+        .u-pa#{$prefix}-#{$size} {
+            padding: #{$value};
+        }
+
+        // Horizontal padding
+        .u-px#{$prefix}-#{$size} {
+            padding-left: #{$value};
+            padding-right: #{$value};
+        }
+
+        // Vertical padding
+        .u-py#{$prefix}-#{$size} {
+            padding-top: #{$value};
+            padding-bottom: #{$value};
+        }
+
+        // Individual sides
+        .u-pt#{$prefix}-#{$size} {
+            padding-top: #{$value};
+        }
+
+        .u-pr#{$prefix}-#{$size} {
+            padding-right: #{$value};
+        }
+
+        .u-pb#{$prefix}-#{$size} {
+            padding-bottom: #{$value};
+        }
+
+        .u-pl#{$prefix}-#{$size} {
+            padding-left: #{$value};
+        }
+    }
+}
+
+// =============================================================================
+// BASE UTILITIES (Mobile-first)
+// =============================================================================
+
+@include generate-padding-utils();
+
+// Horizontal paddings with X-specific CSS custom properties
+@each $size, $value in config.$spacing-scale-x {
+    .u-pa-#{$size} {
+        padding: #{$value};
+    }
+
+    .u-px-#{$size} {
+        padding-left: #{$value};
+        padding-right: #{$value};
+    }
+
+    .u-pl-#{$size} {
+        padding-left: #{$value};
+    }
+
+    .u-pr-#{$size} {
+        padding-right: #{$value};
+    }
+}
+
+// =============================================================================
+// RESPONSIVE UTILITIES
+// =============================================================================
+
+@each $bp-name, $bp-value in config.$responsive-breakpoints {
+    @include mediaQueries.respond-above($bp-value) {
+        @include generate-padding-utils('-#{$bp-name}');
+
+        // Responsive horizontal paddings with X-specific variables
+        @each $size, $value in config.$spacing-scale-x {
+            .u-pa-#{$bp-name}-#{$size} {
+                padding: #{$value};
+            }
+
+            .u-px-#{$bp-name}-#{$size} {
+                padding-left: #{$value};
+                padding-right: #{$value};
+            }
+
+            .u-pl-#{$bp-name}-#{$size} {
+                padding-left: #{$value};
+            }
+
+            .u-pr-#{$bp-name}-#{$size} {
+                padding-right: #{$value};
+            }
+        }
+    }
+}
+
+.u-px-col {
+    padding-left: var(--bj-layout-col-width);
+    padding-right: var(--bj-layout-col-width);
+}
+
+.u-pr-col {
+    padding-right: var(--bj-layout-col-width);
+}
+
+.u-pl-col {
+    padding-left: var(--bj-layout-col-width);
+}

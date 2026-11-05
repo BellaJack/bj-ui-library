@@ -1,0 +1,35 @@
+// =============================================================================
+// 02-TOOLS - MIXINS & FUNCTIONS (No CSS Output)
+// =============================================================================
+// This file aggregates and forwards all tool modules (mixins and functions).
+// Use `@use 'path/to/02-tools' as tools;` to access all tools.
+//
+// Available after import:
+// - tools.respond-above(), tools.respond-below() (media queries)
+// - tools.fluid() (fluid typography)
+// - tools.rem() (px to rem conversion)
+// - tools.bj-button-base() (button mixins)
+// - And more...
+// =============================================================================
+
+// Core utilities
+@forward 'tools.utilities';
+@forward 'tools.decimals';
+
+// Responsive tools
+@forward 'tools.media-queries';
+@forward 'tools.fluid';
+
+// Typography tools
+@forward 'tools.typo';
+
+// Animation & transitions
+@forward 'tools.animations';
+@forward 'tools.transitions';
+
+// Component tools
+@forward 'tools.buttons-link';
+@forward 'tools.forms';
+@forward 'tools.background';
+@forward 'tools.svg';
+@forward 'tools.z-index';

@@ -1,0 +1,19 @@
+.bj-radius {
+    border-radius: var(--bj-radius-default);
+
+    &-xxs {
+        border-radius: var(--bj-radius-xxs);
+    }
+
+    &-sm {
+        border-radius: var(--bj-radius-sm);
+    }
+
+    &-md {
+        border-radius: var(--bj-radius-md);
+    }
+
+    &-round {
+        border-radius: 9999px;
+    }
+}

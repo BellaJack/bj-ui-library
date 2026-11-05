@@ -1,0 +1,36 @@
+@use '../01-settings/settings.font' as settingsFont;
+
+blockquote {
+    --bj-blockquote-bg: var(--bj-color-gray-100);
+    --bj-blockquote-icon-color: var(--bj-color-gray-300);
+    --bj-blockquote-icon-y: var(--u-spacing-y-xs);
+
+    background-color: var(--bj-blockquote-bg);
+    border-radius: var(--bj-radius-default);
+    margin: 0;
+    padding: calc(var(--u-spacing-y-xxl) + 32px) var(--bj-layout-col-width);
+    position: relative;
+
+    &::after,
+    &::before {
+        color: var(--bj-blockquote-icon-color);
+        font: {
+            family: settingsFont.$font-family-icon;
+            size: 40px;
+            weight: bold;
+        }
+        position: absolute;
+    }
+
+    &::before {
+        content: '\f10d';
+        left: var(--bj-layout-col-width);
+        top: var(--bj-blockquote-icon-y);
+    }
+
+    &::after {
+        bottom: var(--bj-blockquote-icon-y);
+        content: '\f10e';
+        right: var(--bj-layout-col-width);
+    }
+}

@@ -1,0 +1,21 @@
+pre {
+    font-family: monospace;
+    white-space: pre;
+
+    code {
+        background: {
+            color: var(--bj-color-gray-800);
+        }
+
+        border: 2px solid var(--bj-color-gray-950);
+        border-radius: var(--bj-radius-xs);
+        color: var(--bj-color-primary-100);
+
+        display: block;
+        max-width: 100%;
+        min-width: 100px;
+        overflow-x: auto;
+        padding: var(--u-spacing-y-sm) var(--u-spacing-x-sm);
+        white-space: pre;
+    }
+}

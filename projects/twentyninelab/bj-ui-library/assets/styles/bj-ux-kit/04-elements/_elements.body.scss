@@ -1,0 +1,31 @@
+@use '../01-settings/settings.font' as settingsFont;
+@use '../02-tools/tools.utilities' as toolsUtilities;
+
+body {
+  background-color: var(--bj-surface-ground);
+  color: var(--text-color);
+  font-family: 'Lexend', sans-serif;
+}
+
+* {
+  &:focus-visible {
+    --bj-color-input-border: var(--bj-color-body-main);
+    @include toolsUtilities.a11y-outline;
+  }
+}
+
+.bj-keyboard-outline {
+  --bj-color-a11y-outline: var(--bj-color-body-main);
+  --bj-color-a11y-outline-shadow: var(--bj-color-white);
+
+  * {
+    &:focus-visible {
+      @include toolsUtilities.a11y-outline-keyboard;
+    }
+  }
+}
+
+.bj-body-scroll-off {
+  min-height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,19 @@
+@use '../01-settings/settings.function.rem' as function;
+
+.bj-icon-xs {
+    font: {
+        size: function.rem(18px);
+    }
+}
+
+.bj-icon-md {
+    font: {
+        size: function.rem(24px);
+    }
+}
+
+.bj-icon-lg {
+    font: {
+        size: function.rem(32px);
+    }
+}

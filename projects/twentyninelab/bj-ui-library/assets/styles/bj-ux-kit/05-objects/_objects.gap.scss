@@ -1,0 +1,55 @@
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+
+// Gap sizes map
+$gap-sizes: (
+    'small': var(--bj-gap),
+    'medium': var(--bj-gap-medium),
+    'large': var(--bj-gap-large),
+    'xl': var(--bj-gap-xl),
+    'no': 0
+);
+
+// Breakpoint prefixes
+$breakpoints-map: (
+    '': null,
+    'md': breakpoints.$screen-md,
+    'lg': breakpoints.$screen-lg,
+    'xl': breakpoints.$screen-xl,
+    'xxl': breakpoints.$screen-xxl
+);
+
+.bj-gap-layout {
+    column-gap: var(--bj-layout-col-gutter);
+}
+
+// Generate gap utilities
+@mixin generate-gap-utilities($prefix: '') {
+    $selector-prefix: if(sass($prefix != ""): "-#{$prefix}"; else: "");
+
+    @each $size, $value in $gap-sizes {
+        .bj-gap#{$selector-prefix}-#{$size} {
+            gap: $value;
+        }
+
+        .bj-gap-col#{$selector-prefix}-#{$size} {
+            column-gap: $value;
+        }
+
+        .bj-gap-row#{$selector-prefix}-#{$size} {
+            row-gap: $value;
+        }
+    }
+}
+
+// Base utilities (no media query)
+@include generate-gap-utilities();
+
+// Responsive utilities
+@each $prefix, $breakpoint in $breakpoints-map {
+    @if $breakpoint {
+        @include mediaQueries.respond-above($breakpoint) {
+            @include generate-gap-utilities($prefix);
+        }
+    }
+}

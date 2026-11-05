@@ -1,0 +1,45 @@
+// =============================================================================
+// ANIMATION TOKENS
+// =============================================================================
+// Design tokens for animations - easing functions and timing values.
+// Use for consistent motion throughout the application.
+// =============================================================================
+
+// Easing functions
+$easing: cubic-bezier(0.23, 1, 0.32, 1);
+$ease: ease;
+$ease-in: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+$ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+$ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);   // from easings.net
+$ease-in-out-back: cubic-bezier(0.68, -0.6, 0.32, 1.6); // from easings.net
+$ease-in-out: ease-in-out;
+
+// Timing durations
+$time-faster: 0.1s;
+$time-fast: 0.25s;
+$time-medium: 0.5s;
+$time-slow: 0.75s;
+$time-slower: 1s;
+$time-loading-spin: 1.5s;
+
+// =============================================================================
+// ANIMATION MAPS (for programmatic iteration)
+// =============================================================================
+
+$easings: (
+    'default': $easing,
+    'ease': $ease,
+    'ease-in': $ease-in,
+    'ease-out': $ease-out,
+    'ease-in-out': $ease-in-out,
+    'ease-in-out-quint': $ease-in-out-quint,
+    'ease-in-out-back': $ease-in-out-back
+);
+
+$durations: (
+    'faster': $time-faster,
+    'fast': $time-fast,
+    'medium': $time-medium,
+    'slow': $time-slow,
+    'slower': $time-slower
+);

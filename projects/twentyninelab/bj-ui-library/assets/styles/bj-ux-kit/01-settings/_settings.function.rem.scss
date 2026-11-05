@@ -1,0 +1,34 @@
+@use "../02-tools/tools.decimals";
+
+@use 'sass:math';
+
+@function parse-int($n) {
+  @return math.div($n, ($n * 0+1));
+}
+
+@function rem($value) {
+  $rem: 1rem;
+
+  @if $value==0 or $value==auto {
+    $rem: $value;
+  }
+
+  @else {
+    $unit: math.unit($value);
+    $val: parse-int($value);
+
+    @if $unit=='px' {
+      $rem: (tools.decimal-ceil(math.div($val, parse-int(16px)), 5) + rem);
+    }
+
+    @else if $unit=='rem' {
+      $rem: $value;
+    }
+
+    @else {
+      @error 'Please use px size!';
+    }
+  }
+
+  @return $rem;
+}

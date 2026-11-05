@@ -1,0 +1,161 @@
+@use '../01-settings/settings.font' as fonts;
+@use '../02-tools/tools.typo' as typo;
+
+.bj-ty-heading-1,
+.bj-ty-heading-2,
+.bj-ty-heading-3,
+.bj-ty-heading-4,
+.bj-ty-heading-5,
+.bj-ty-heading-6 {
+    line-height: normal;
+}
+
+.bj-ty-heading-1 {
+    @include typo.bj-heading-1;
+}
+
+.bj-ty-heading-2 {
+    @include typo.bj-heading-2;
+}
+
+.bj-ty-heading-3 {
+    @include typo.bj-heading-3;
+}
+
+.bj-ty-heading-4 {
+    @include typo.bj-heading-4;
+}
+
+.bj-ty-heading-5 {
+    @include typo.bj-heading-5;
+}
+
+.bj-ty-heading-6 {
+    @include typo.bj-heading-6;
+}
+
+.bj-ty-display-1 {
+    @include typo.bj-display-1;
+}
+
+.bj-ty-display-2 {
+    @include typo.bj-display-2;
+}
+
+.bj-ty-display-3 {
+    @include typo.bj-display-3;
+}
+
+.bj-ty-display-4 {
+    @include typo.bj-display-4;
+}
+
+.bj-ty-display-5 {
+    @include typo.bj-display-5;
+}
+
+.bj-ty-display-6 {
+    @include typo.bj-display-6;
+}
+
+.bj-ty-large {
+    font: {
+        size: var(--bj-typo-h5);
+        size: var(--bj-typo-h5-clamp);
+    }
+}
+
+.bj-ty-medium {
+    font: {
+        size: var(--bj-typo-h6);
+        size: var(--bj-typo-h6-clamp);
+    }
+}
+
+.bj-ty-small {
+    font: {
+        size: var(--bj-typo-small);
+        size: var(--bj-typo-small-clamp);
+    }
+}
+
+.bj-ty-label-uppercase {
+    @include typo.bj-label-uppercase;
+}
+
+.bj-ty-button-label {
+    @include typo.bj-button-label;
+}
+
+.bj-ty-line-normal {
+    line-height: normal;
+}
+
+.bj-ty-i {
+    font: {
+        style: italic;
+    }
+}
+
+.bj-ty-l {
+    font: {
+        weight: fonts.$font-weight-light;
+    }
+}
+
+.bj-ty-r {
+    font: {
+        weight: fonts.$font-weight-regular;
+    }
+}
+
+.bj-ty-sb {
+    font: {
+        weight: fonts.$font-weight-semibold;
+    }
+}
+
+.bj-ty-b {
+    font: {
+        weight: fonts.$font-weight-bold;
+    }
+}
+
+.bj-ty-upp {
+    text: {
+        transform: uppercase;
+    }
+}
+
+.bj-ty-center {
+    text: {
+        align: center;
+    }
+}
+
+.bj-ty-right {
+    text: {
+        align: right;
+    }
+}
+
+.bj-ty-balance {
+    text-wrap: balance;
+}
+
+.bj-ty-no-wrap {
+    text-wrap: nowrap;
+}
+
+.bj-ty-break-word {
+    word-break: break-word;
+}
+
+.bj-ty-break-all {
+    word-break: break-all;
+}
+
+.bj-ty-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

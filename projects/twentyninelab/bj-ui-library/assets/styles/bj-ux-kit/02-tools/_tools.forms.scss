@@ -1,0 +1,81 @@
+@use "../01-settings/settings.colors";
+@use "../01-settings/settings.font" as settingsFont;
+@use "../01-settings/settings.function.rem" as settingsRem;
+@use "../01-settings/settings.sizes" as settingsSizes;
+
+@mixin input-autofill-background($background: settings.$color-black, $color: settings.$color-white) {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $background inset;
+    -webkit-text-fill-color: $color;
+  }
+}
+
+@mixin input-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin form-element-base {
+  background: {
+    color: var(--bj-color-input-background);
+  }
+
+  border: var(--bj-size-input-border-size) solid var(--bj-color-input-border);
+  border-radius: var(--bj-size-input-border-radius);
+  color: var(--bj-color-input-text);
+  padding: var(--bj-size-input-paddig);
+  width: 100%;
+
+  &[disabled] {
+    --bj-color-input-background: var(--bj-color-input-disabled-background);
+    opacity: .4;
+    pointer-events: none;
+  }
+
+  &:focus {
+    --bj-color-input-background: var(--bj-color-input-focused-background);
+  }
+
+  @include input-placeholder {
+    color: var(--bj-color-input-placeholder-color);
+    opacity: 1;
+  }
+}
+
+@mixin input-error {
+  border: {
+    bottom: 2px solid var(--bj-color-error);
+  }
+  color: var(--bj-color-error);
+
+  font: {
+    weight: settingsFont.$font-weight-semibold;
+  }
+}
+
+@mixin input-indent {
+  text-indent: settingsRem.rem(settingsSizes.$form-input-indent);
+
+  padding: {
+    right: settingsRem.rem(settingsSizes.$form-input-indent);
+  }
+}
+
+@mixin reset-input-outline {
+  box-shadow: none;
+  outline: 0px;
+  -webkit-appearance: none;
+}
