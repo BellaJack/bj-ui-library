@@ -15,3 +15,12 @@
   width: 20rem;
   z-index: 999;
 }
+
+.bj-ds-nav__title {
+  font-weight: var(--bj-font-weight-bold);
+}
+
+.bj-ds-nav__list {
+  list-style: none;
+  padding: 0;
+}

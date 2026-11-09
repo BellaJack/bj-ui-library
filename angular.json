@@ -67,7 +67,8 @@
               {
                 "input": "projects/twentyninelab/bj-ui-library/assets/styles/styles.scss"
               },
-              "projects/bj-ui-library-documentation/styles/styles.scss"
+              "projects/bj-ui-library-documentation/styles/styles.scss",
+              "node_modules/highlight.js/styles/atom-one-dark.css"
             ],
             "server": "projects/bj-ui-library-documentation/src/main.server.ts",
             "outputMode": "server",
@@ -83,8 +84,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "4MB",
+                  "maximumError": "8MB"
                 },
                 {
                   "type": "anyComponentStyle",

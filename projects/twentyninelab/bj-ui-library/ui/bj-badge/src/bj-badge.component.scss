@@ -1,0 +1,33 @@
+// The default backgrounds are light in the dark theme too, and the bj-bg
+// utilities read this token for their text color.
+:host {
+    --bj-color-body-main: var(--bj-color-gray-900);
+    display: inline-flex;
+}
+
+:host(:has(> .u-w-full)) {
+    display: flex;
+}
+
+.bj-badge {
+    align-items: center;
+    display: inline-flex;
+    font-size: .875rem;
+    gap: var(--u-spacing-x-xxs);
+    line-height: 1.25;
+    padding: calc(var(--u-spacing-unit) / 2) var(--u-spacing-x-xxs);
+
+    &--small {
+        font-size: .75rem;
+        padding: calc(var(--u-spacing-unit) / 4) calc(var(--u-spacing-unit) / 2);
+    }
+
+    &--large {
+        font-size: 1rem;
+        padding: var(--u-spacing-y-xxs) var(--u-spacing-x-xs);
+    }
+
+    &--icon-right {
+        flex-direction: row-reverse;
+    }
+}

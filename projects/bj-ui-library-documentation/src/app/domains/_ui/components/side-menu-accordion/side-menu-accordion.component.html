@@ -1,0 +1,49 @@
+@if (menuItems().length > 0) {
+    <bj-accordion
+        [id]="'sideMenuAccordion'"
+        [buttonClasses]="'bj-btn bj-btn-outline bj-btn-contrast u-w-full bj-justify-between'"
+        [contentClasses]="'u-pt-sm'"
+        #buttonSideMenuAccordion>
+        <ng-container accordionButton>
+            <span>On this page</span>
+            <i
+                aria-hidden="true"
+                class="fas"
+                [class.fa-chevron-down]="!buttonSideMenuAccordion.open()"
+                [class.fa-chevron-up]="buttonSideMenuAccordion.open()">
+            </i>
+        </ng-container>
+        <ng-container accordionContent>
+            <nav aria-label="On this page">
+                <ul class="bj-ds-side-menu__list">
+                    @for (item of menuItems(); track item.id) {
+                        <li>
+                            <a
+                                [href]="'#' + item.id"
+                                (click)="scrollToSection(item.id, $event)"
+                                class="bj-ds-side-menu__link"
+                                [class.bj-ds-side-menu__link--active]="_uiService.sideMenuItemActiveId() === item.id">
+                                {{ item.text }}
+                            </a>
+                            @if (item.children && item.children.length > 0) {
+                                <ul class="bj-ds-side-menu__list bj-ds-side-menu__list--sub">
+                                    @for (child of item.children; track child.id) {
+                                        <li>
+                                            <a
+                                                [href]="'#' + child.id"
+                                                (click)="scrollToSection(child.id, $event)"
+                                                class="bj-ds-side-menu__link"
+                                                [class.bj-ds-side-menu__link--active]="_uiService.sideMenuItemActiveId() === child.id">
+                                                {{ child.text }}
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </ng-container>
+    </bj-accordion>
+}

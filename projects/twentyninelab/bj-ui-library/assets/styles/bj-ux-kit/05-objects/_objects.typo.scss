@@ -10,6 +10,12 @@
     line-height: normal;
 }
 
+.bj-ty-heading-1,
+.bj-ty-heading-2,
+.bj-ty-heading-3 {
+  text-wrap: balance;
+}
+
 .bj-ty-heading-1 {
     @include typo.bj-heading-1;
 }

@@ -1,0 +1,23 @@
+.bj-ds-side-menu__list {
+  display: grid;
+  gap: var(--u-spacing-y-xxs);
+  list-style: none;
+  padding: 0;
+
+  &--sub {
+    margin-top: var(--u-spacing-y-xxs);
+    padding-left: var(--u-spacing-x-xs);
+  }
+}
+
+.bj-ds-side-menu__link {
+  color: inherit;
+  font-size: .875rem;
+  text-decoration: none;
+
+  &:hover,
+  &--active {
+    font-weight: var(--bj-font-weight-bold);
+    text-decoration: underline;
+  }
+}

@@ -1,5 +1,16 @@
 <div class="bj-layout-sidebar" id="layoutSideBar">
     <nav class="bj-ds-nav">
-        <div class="bj-ds-nav__title u-mb-xxs">Welcome</div>
+        <ul class="bj-ds-nav__list u-mb-xxs">
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/'" [label]="'Welcome'"></li>
+        </ul>
+        <div class="bj-ds-nav__title u-mb-xxs">Components UI</div>
+        <ul class="bj-ds-nav__list">
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/accordion'" [label]="'Accordion'"></li>
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/avatar'" [label]="'Avatar'"></li>
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/badge'" [label]="'Badge'"></li>
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/button'" [label]="'Button'"></li>
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/icon'" [label]="'Icon'"></li>
+            <li bjDsNavEl class="bj-ds-nav__el" [url]="'/components/icon-round'" [label]="'Icon Round'"></li>
+        </ul>
     </nav>
 </div>

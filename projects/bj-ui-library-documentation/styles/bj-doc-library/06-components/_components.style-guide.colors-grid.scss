@@ -1,0 +1,22 @@
+.bj-ds-colors-table {
+    th {
+        width: calc(100% / 6);
+
+        &.th-w-10 {
+            width: 10%;
+        }
+    }
+
+    td {
+        text: {
+            align: center;
+        }
+    }
+}
+
+.bj-ds-colors-example {
+    aspect-ratio: 3 / 2;
+    border-radius: var(--radius-radius-rounded);
+    border: 1px solid var(--kw-gray-color-500);
+    height: 30px;
+}

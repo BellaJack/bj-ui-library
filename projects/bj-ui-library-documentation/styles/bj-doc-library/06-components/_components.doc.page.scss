@@ -1,0 +1,47 @@
+@use '../01-settings/settings.breakpoints' as breakpoints;
+@use '../02-tools/tools.media-queries' as mediaQueries;
+@use '../02-tools/tools.rem' as toolsRem;
+
+.bj-doc-page-grid {
+    gap: var(--spacing-spacing-xl-extra);
+}
+
+.bj-doc-page-title,
+.bj-doc-page-content {
+    padding-inline: var(--spacing-spacing-md);
+}
+
+.bj-doc-page-title {
+    border-top-left-radius: var(--radius-radius-rounded);
+    border-top-right-radius: var(--radius-radius-rounded);
+    padding-block-end: var(--spacing-spacing-xl);
+    padding-block-start: var(--spacing-spacing-xl);
+}
+
+.bj-doc-page-content {
+    border-bottom-left-radius: var(--radius-radius-rounded);
+    border-bottom-right-radius: var(--radius-radius-rounded);
+    font-size: toolsRem.rem(16px);
+    padding-block-end: var(--spacing-spacing-xl);
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-desktop) {
+    .bj-doc-page {
+        display: grid;
+        grid-template-columns: 1fr 250px;
+        grid-template-rows: auto 1fr;
+        column-gap: var(--spacing-spacing-lg);
+    }
+
+    .bj-doc-page-title {
+        grid-row: 1;
+    }
+
+    kiwi-doc-side-menu {
+        grid-row: 1 / span 2;
+    }
+
+    .bj-doc-page-content {
+        grid-row: 2;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="bj-doc-page">
+    <div class="bj-doc-page-title">
+        <h1 class="bj-ty-heading-1">{{ title() }}</h1>
+        @if (infoVersion()) {
+            <bj-badge radius="pills">{{ infoVersion() }}</bj-badge>
+        }
+    </div>
+    <bj-doc-side-menu class="bj-doc-page-side"></bj-doc-side-menu>
+    <bj-doc-side-menu-accordion class="bj-doc-page-side-accordion"></bj-doc-side-menu-accordion>
+    <div class="bj-doc-page-content">
+        <div class="bj-grid bj-doc-page-grid">
+            <ng-content select="[bj-ds-example]"></ng-content>
+        </div>
+    </div>
+</div>

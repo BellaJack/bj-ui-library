@@ -19,7 +19,7 @@ $grid-orders: (1, 2, 3, 4, 5, 6);
 @mixin generate-grid-utilities($prefix) {
     @each $cols in $grid-columns {
         .bj-grid--#{$prefix}-#{$cols} {
-            grid-template-columns: repeat($cols, 1fr);
+            grid-template-columns: repeat($cols, minmax(0, 1fr));
         }
     }
 
@@ -51,7 +51,7 @@ $grid-orders: (1, 2, 3, 4, 5, 6);
 // Base grid
 .bj-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     &-col {
         grid-column: auto / span 1;

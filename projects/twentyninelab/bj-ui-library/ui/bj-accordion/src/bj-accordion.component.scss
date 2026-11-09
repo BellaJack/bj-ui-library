@@ -1,0 +1,17 @@
+.bj-accordion__content {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+}
+
+.bj-accordion__label {
+    font-weight: var(--bj-font-weight-bold);
+}
+
+button[disabled] {
+    pointer-events: none;
+
+    span {
+        color: var(--bj-color-gray-500);
+    }
+}

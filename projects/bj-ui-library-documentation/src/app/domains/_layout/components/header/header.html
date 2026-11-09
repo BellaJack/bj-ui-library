@@ -1,17 +1,10 @@
 <header class="bj-layout-topbar">
-    <div class="kw-flex">
+    <div class="bj-flex">
         <button
-            class="bj-btn-outline bj-ds-layout-menu-button"
+            class="bj-btn bj-btn-outline bj-btn-contrast bj-ds-layout-menu-button"
             type="button"
             (click)="onMenuToggle()">
-            <i
-                aria-hidden="true"
-                class="fas"
-                [ngClass]="{
-                    'fa-xmark': menuOpened,
-                    'fa-bars-staggered': !menuOpened
-                }">
-            </i>
+            <bj-icon  [icon]="menuOpened ? 'fas fa-xmark' : 'fas fa-bars-staggered'"></bj-icon>
             <span class="bj-ty-small" aria-hidden="true">Menu</span>
             <span class="u-v-hidden">{{ menuOpened ? 'Close Menu' : 'Open Menu' }}</span>
         </button>
@@ -19,15 +12,22 @@
     <a
         routerLink="/"
         class="bj-flex bj-gap-medium bj-link-no-decoration">
-        <span aria-hidden="true" class="bj-ty-heading-2">Test</span>
+        <span aria-hidden="true" class="bj-ty-heading-2">BJ UI Library</span>
         <span class="u-v-hidden">Go to Home BJ Design System Library</span>
     </a>
     <div class="bj-flex bj-gap-medium">
+        <button
+            class="bj-btn bj-btn-text bj-btn-contrast bj-btn-icon"
+            type="button"
+            (click)="toggleDarkMode()">
+            <bj-icon [size]="'large'" [icon]="_layoutService.isDarkTheme() ? 'fas fa-sun' : 'fas fa-moon'"></bj-icon>
+            <span class="u-v-hidden">{{ _layoutService.isDarkTheme() ? 'Light Mode' : 'Dark Mode' }}</span>
+        </button>
         <a
-            class="bj-btn-icon bj-link-no-decoration"
+            class="bj-btn bj-btn-text bj-btn-contrast bj-btn-icon"
             href="https://github.com/BellaJack/bj-ui-library"
             target="_blank">
-            <i aria-hidden="true" class="fab fa-github"></i>
+            <bj-icon [size]="'large'" [icon]="'fab fa-github'"></bj-icon>
             <span class="u-v-hidden">GitHub</span>
         </a>
     </div>

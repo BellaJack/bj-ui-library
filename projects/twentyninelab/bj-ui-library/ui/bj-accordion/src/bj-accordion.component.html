@@ -1,0 +1,42 @@
+<div 
+    class="bj-accordion"
+    [ngClass]="classes()">
+    <button 
+        type="button"
+        [id]="`accordion-btn-${id()}`"
+        [attr.aria-expanded]="open() ? 'true' : 'false'"
+        [attr.aria-controls]="`accordion-content-${id()}`"
+        (click)="toggleAccordion()"
+        [disabled]="disabled()"
+        [class]="buttonClasses()">
+        <ng-content select="[accordionButton]">
+            <i 
+                aria-hidden="true" 
+                class="bj-ty-icon-lg fas"
+                [ngClass]="{
+                    'fa-angle-right': !open(),
+                    'fa-angle-down': open()
+                }">
+            </i>
+            <span class="bj-accordion__label">
+                {{ buttonLabel() }}
+            </span>
+        </ng-content>
+    </button>
+    <div 
+        #accordionContent
+        [attr.aria-labelledby]="`accordion-btn-${id()}`"
+        [id]="`accordion-content-${id()}`"
+        class="bj-accordion__content"
+        [attr.aria-hidden]="!open() ? 'true' : 'false'"
+        [attr.inert]="open() ? null : ''"
+        [style]="`max-height: ${contentHeight()}px`"
+        role="region">
+        <div [ngClass]="contentClasses()">
+            <ng-content select="[accordionContent]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iste error! Quod id, dicta dolorem aliquam tenetur eaque numquam soluta dignissimos quae quisquam fugiat doloremque, eius cumque dolorum corrupti vel?
+            </ng-content>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<bj-doc-page [title]="'Avatar'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>An avatar represents a person with the initial characters of their name.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <div class="bj-flex">
+                    <bj-avatar userName="Ada Lovelace" />
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Container: a circle or a square with a colored background.</li>
+                <li>Initials: the first two characters of <code>userName</code>, in uppercase.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>To identify the author of a comment or a change.</li>
+                    <li>To show the signed-in person in a header.</li>
+                    <li>To make a list of people easier to scan.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>As the only way to identify a person: show the name too.</li>
+                    <li>To represent products or companies.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Pass the name the person uses in the product.</li>
+                <li>Remember that the avatar shows the first two characters of the name, not the initials of name and surname.</li>
+                <li>Use one size and one shape for the same kind of list.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>Two letters do not identify a person for a screen reader: show the full name next to the avatar.</li>
+                <li>When the name is visible, add <code>aria-hidden="true"</code> to the avatar so it is not read twice.</li>
+                <li>Check the contrast when you change the colors with the custom properties.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Sizes'" [titleLevel]="3">
+                <p>Four sizes, from 32 to 80 pixels.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="sizesCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-avatar userName="Ada Lovelace" size="small" />
+                    <bj-avatar userName="Ada Lovelace" />
+                    <bj-avatar userName="Ada Lovelace" size="large" />
+                    <bj-avatar userName="Ada Lovelace" size="extra-large" />
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Square'" [titleLevel]="3">
+                <p>Use the square shape when the interface has only straight corners.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="shapeCode">
+                <div class="bj-flex">
+                    <bj-avatar userName="Ada Lovelace" shape="square" />
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Custom colors'" [titleLevel]="3">
+                <p>Override <code>--bj-avatar-background</code> and <code>--bj-avatar-color</code> to change the colors.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="customCode">
+                <div class="bj-flex">
+                    <bj-avatar
+                        userName="Ada Lovelace"
+                        style="--bj-avatar-background: var(--bj-color-secondary-800); --bj-avatar-color: var(--bj-color-white)" />
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'With the full name'" [titleLevel]="3">
+                <p>The recommended pattern: the name is visible and read once.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="withNameCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-avatar userName="Ada Lovelace" aria-hidden="true" />
+                    <span>Ada Lovelace</span>
+                </div>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

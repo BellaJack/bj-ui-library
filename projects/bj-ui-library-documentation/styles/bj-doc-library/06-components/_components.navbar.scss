@@ -1,0 +1,143 @@
+@use '../02-tools/tools.typo' as toolsTypo;
+
+.bj-ds-nav {
+    --kw-item-before-color: transparent;
+    --kw-active-item-before-color: var(--kw-secondary-color-200);
+
+    &__title {
+        @include toolsTypo.kw-title-small;
+
+        color: var(--kw-gray-color-700);
+        text-transform: uppercase;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-spacing-xxs, 4px);
+
+        &--sub {
+            margin-left: var(--u-spacing-x-sm);
+            margin-top: var(--u-spacing-y-xxs);
+        }
+    }
+
+    &__accordion {
+        &__btn {
+            align-items: center;
+            background-color: var(--kw-gray-color-100);
+            border-radius: var(--radius-radius-rounded-xs);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            padding: var(--u-spacing-y-xxs) var(--u-spacing-x-sm);
+            position: relative;
+            transition: background-color var(--kw-time-duration-fast) var(--kw-ease);
+            user-select: none;
+            width: 100%;
+
+            &:hover,
+            &:focus-visible,
+            &[aria-expanded="true"] {
+                background-color: var(--kw-gray-color-200);
+            }
+
+            &::before {
+                background-color: var(--kw-item-before-color);
+                content: '';
+                left: 0;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 3px;
+                transition: background-color var(--kw-time-duration-fast) var(--kw-ease);
+            }
+
+            &[aria-expanded="true"] {
+                &::before {
+                    background-color: var(--kw-gray-color-500);
+                }
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-spacing-xxs, 4px);
+            margin-left: var(--u-spacing-x-xs);
+        }
+
+        &:has([aria-current="page"]) {
+            [aria-expanded="false"] {
+                background-color: var(--kw-secondary-color-50);
+                --kw-item-before-color: var(--kw-active-item-before-color);
+            }
+        }
+    }
+
+    &__link,
+    &__side-link {
+        display: block;
+        font-weight: var(--kw-ty-weight-semibold);
+        position: relative;
+        text-decoration: none;
+
+        &::before {
+            background-color: var(--kw-item-before-color);
+            content: '';
+            left: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 3px;
+            transition: background-color var(--kw-time-duration-fast) var(--kw-ease);
+        }
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+
+        &[aria-current="page"],
+        &--active {
+            --kw-item-before-color: var(--kw-active-item-before-color);
+        }
+    }
+
+    &__link {
+        background-color: var(--kw-gray-color-100);
+        border-radius: var(--radius-radius-rounded-xs);
+        overflow: hidden;
+        padding: var(--u-spacing-y-xxs) var(--u-spacing-x-sm);
+        transition: background-color var(--kw-time-duration-fast) var(--kw-ease);
+
+        &:hover,
+        &:focus-visible {
+            &:not([aria-current="page"]):not(.bj-ds-nav__link--active) {
+                background-color: var(--kw-gray-color-200);
+            }
+        }
+
+        &[aria-current="page"],
+        &--active {
+            background-color: var(--kw-secondary-color-50);
+        }
+    }
+
+    &__side-link {
+        padding: 2px var(--u-spacing-x-sm);
+
+        &[aria-current="page"],
+        &--active {
+            text-decoration: underline;
+        }
+
+        &:hover,
+        &:focus-visible {
+            &:not([aria-current="page"]):not(.bj-ds-nav__side-link--active) {
+                --kw-item-before-color: var(--kw-gray-color-500);
+            }
+        }
+    }
+}

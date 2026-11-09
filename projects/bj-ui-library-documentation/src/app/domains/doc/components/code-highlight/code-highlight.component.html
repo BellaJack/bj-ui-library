@@ -1,0 +1,49 @@
+@if (codesToShow.length > 1) {
+    <div class="bj-codehighlight">
+        <div role="tablist" class="bj-codehighlight__list u-mb-xxs">
+            @for (code of codesToShow; track $index; let idx = $index) {
+                <button
+                    (click)="selectedTab.set(idx)"
+                    (keydown)="onTabKeydown($event, idx)"
+                    [id]="`tab-${id}-${idx}`"
+                    class="bj-codehighlight__tab"
+                    role="tab"
+                    type="button"
+                    [attr.aria-controls]="`panel-${id}-${idx}`"
+                    [attr.aria-selected]="selectedTab() === idx"
+                    [attr.tabindex]="selectedTab() === idx ? 0 : -1">
+                    @if (code.label) {
+                        {{ code.label.toUpperCase() }}
+                    } @else {
+                        {{ code.language ? code.language.toUpperCase() : 'HTML' }}
+                    }
+                </button>
+            }
+        </div>
+        @for (code of codesToShow; track $index; let idx = $index) {
+            <div
+                [id]="`panel-${id}-${idx}`"
+                class="bj-codehighlight__tabpanel"
+                role="tabpanel"
+                [hidden]="selectedTab() !== idx"
+                [attr.aria-labelledby]="`tab-${id}-${idx}`">
+                <pre><code [highlight]="code.code" [language]="code.language"></code></pre>
+                <button
+                    class="bj-codehighlight__copy-btn"
+                    type="button"
+                    (click)="copyToClipboard(code.code)">
+                    <i
+                        aria-hidden="true"
+                        class="fas"
+                        [class]="copySuccess() ? 'fa-check' : 'fa-paste'">
+                    </i>
+                    <span class="u-v-hidden">Copy to clipboard</span>
+                </button>
+            </div>
+        }
+    </div>
+} @else {
+    @for (code of codesToShow; track $index) {
+        <pre><code [highlight]="code.code" [language]="code.language"></code></pre>
+    }
+}

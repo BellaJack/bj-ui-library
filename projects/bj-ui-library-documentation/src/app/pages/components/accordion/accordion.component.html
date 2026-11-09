@@ -1,0 +1,139 @@
+<bj-doc-page [title]="'Accordion'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>An accordion shows and hides a section of content, so a long page stays easy to scan.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <bj-accordion id="shipping" buttonLabel="Shipping details">
+                    <ng-container accordionContent>
+                        <p>Orders ship within two working days.</p>
+                    </ng-container>
+                </bj-accordion>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Button: toggles the content. The <code>accordionButton</code> slot replaces its default icon and label.</li>
+                <li>Content region: the panel with an animated height.</li>
+                <li>Content: what you project in the <code>accordionContent</code> slot.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>To group secondary information, such as frequently asked questions.</li>
+                    <li>To shorten a page with many independent sections.</li>
+                    <li>To offer optional details inside a form or a filter panel.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>For content that everyone needs to read: leave it visible.</li>
+                    <li>For content that people compare side by side.</li>
+                    <li>For a single short sentence, which does not need hiding.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Write labels that tell what is inside before opening it.</li>
+                <li>Keep labels short and parallel when accordions are stacked.</li>
+                <li>Keep the content short: a very long section deserves its own page.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>The button is a native <code>button</code>, so it works with <kbd>Enter</kbd> and <kbd>Space</kbd>.</li>
+                <li><code>aria-expanded</code> announces the state and <code>aria-controls</code> links the button to the content.</li>
+                <li>The content is a <code>region</code> named by its button.</li>
+                <li>A closed accordion is <code>inert</code>: its links cannot be reached with <kbd>Tab</kbd>.</li>
+                <li>Give every accordion a unique <code>id</code>, or the links between button and content break.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Custom button'" [titleLevel]="3">
+                <p>Use the <code>accordionButton</code> slot and <code>buttonClasses</code> to style the button, for example as a <code>bj-btn</code>.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="customButtonCode">
+                <bj-accordion
+                    id="faq"
+                    buttonClasses="bj-btn bj-btn-outline bj-btn-contrast u-w-full bj-justify-between"
+                    #faq>
+                    <ng-container accordionButton>
+                        <span>Frequently asked questions</span>
+                        <i aria-hidden="true" class="fas" [class]="faq.open() ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                    </ng-container>
+                    <ng-container accordionContent>
+                        <p>Write to us if you do not find your answer.</p>
+                    </ng-container>
+                </bj-accordion>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Open by default'" [titleLevel]="3">
+                <p>Set <code>[open]="true"</code> when the content is what most people are looking for.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="openCode">
+                <bj-accordion id="details" buttonLabel="Details" [open]="true">
+                    <ng-container accordionContent>
+                        <p>This content is visible from the start.</p>
+                    </ng-container>
+                </bj-accordion>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Controlled state'" [titleLevel]="3">
+                <p>Bind <code>[(open)]</code> to control the accordion from outside, and listen to <code>statusChanges</code> to react to it.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="controlledCode">
+                <div class="bj-grid bj-gap-medium">
+                    <div class="bj-flex bj-gap-medium">
+                        <bj-button (click)="isOpen.set(!isOpen())">Toggle from outside</bj-button>
+                        <span>{{ statusLabel() }}</span>
+                    </div>
+                    <bj-accordion
+                        id="controlled"
+                        buttonLabel="Controlled accordion"
+                        [(open)]="isOpen"
+                        (statusChanges)="statusLabel.set($event ? 'Opened' : 'Closed')">
+                        <ng-container accordionContent>
+                            <p>Its state lives in the parent component.</p>
+                        </ng-container>
+                    </bj-accordion>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Disabled'" [titleLevel]="3">
+                <p>Prefer explaining why a section is not available over disabling it silently.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="disabledCode">
+                <bj-accordion id="locked" buttonLabel="Not available" [disabled]="true"></bj-accordion>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

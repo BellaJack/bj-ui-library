@@ -1,0 +1,39 @@
+@use 'bj-ux-kit/01-settings/settings.breakpoints' as breakpoints;
+@use 'bj-ux-kit/02-tools/tools.media-queries' as mediaQueries;
+
+.bj-ds-home {
+    position: relative;
+    height: calc(100vh - var(--bj-ds-header-height));
+
+    &__welcome {
+        box-shadow: var(--kw-shadow-elevation-high);
+        left: var(--spacing-spacing-md);
+        position: absolute;
+        right: var(--spacing-spacing-md);
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    &__colors {
+        height: 100%;
+    }
+
+    &__color {
+        height: calc( 100% / 18);
+    }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-large) {
+    .bj-ds-home {
+        overflow: hidden;
+
+        &__colors {
+            transform: rotate(-45deg) scale(2.1);
+        }
+
+        &__welcome {
+            right: auto;
+        }
+    }
+}

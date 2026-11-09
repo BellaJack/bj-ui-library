@@ -1,0 +1,41 @@
+@use 'bj-ux-kit/01-settings/settings.breakpoints' as breakpoints;
+@use 'bj-ux-kit/02-tools/tools.media-queries' as mediaQueries;
+
+.bj-ds-side-menu {
+  &__title {
+    font-weight: var(--bj-font-weight-bold);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--u-spacing-y-xxs);
+    list-style: none;
+    padding: 0;
+
+    &--sub {
+      margin-top: var(--u-spacing-y-xxs);
+      padding-left: var(--u-spacing-x-xs);
+    }
+  }
+
+  &__link {
+    color: inherit;
+    font-size: .875rem;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      font-weight: var(--bj-font-weight-bold);
+      text-decoration: underline;
+    }
+  }
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xl) {
+  .bj-ds-side-menu {
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    position: sticky;
+    top: 6rem;
+  }
+}

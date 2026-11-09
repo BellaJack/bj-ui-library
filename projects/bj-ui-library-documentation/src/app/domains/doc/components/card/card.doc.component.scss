@@ -1,0 +1,6 @@
+// Doc cards always have a light background, in the dark theme too.
+// The bj-bg utilities read this token, so setting `color` alone is not enough.
+:host {
+  --bj-color-body-main: var(--bj-color-gray-900);
+  color: var(--bj-color-body-main);
+}

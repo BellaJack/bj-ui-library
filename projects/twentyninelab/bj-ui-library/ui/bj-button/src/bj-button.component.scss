@@ -1,0 +1,9 @@
+:host(.bj-button) {
+    display: inline-flex;
+}
+
+// The inner button has `pointer-events: none` when disabled, so without this rule
+// a click would land on the host and still trigger a (click) listener bound to it.
+:host(.bj-button--disabled) {
+    pointer-events: none;
+}

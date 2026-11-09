@@ -1,0 +1,22 @@
+<div class="bj-table-wrapper">
+    <table class="bj-table">
+        <thead class="bj-table__head">
+            <tr>
+                @for (th of tableHeaders; track th.id) {
+                    <th class="bj-table__cell">{{ th.text }}</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for (row of tableRows; track $index) {
+                <tr class="bj-table__row">
+                    <td class="bj-table__cell"><code>{{ row.property }}</code></td>
+                    <td class="bj-table__cell">{{ row.type }}</td>
+                    <td class="bj-table__cell"><code>{{ row.default }}</code></td>
+                    <td class="bj-table__cell">{{ row.required ? 'Yes' : 'No' }}</td>
+                    <td class="bj-table__cell" [innerHTML]="row.description | safeHtml"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

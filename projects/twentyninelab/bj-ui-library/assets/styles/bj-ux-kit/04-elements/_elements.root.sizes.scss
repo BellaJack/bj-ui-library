@@ -61,13 +61,12 @@
     --bj-size-button-border-size: 2px;
     --bj-size-button-font-size: #{function.rem(14px)};
     --bj-size-button-height: #{function.rem(sizes.$button-height)};
-    --bj-size-button-height-sm: 0;
+    --bj-size-button-height-sm: #{function.rem(36px)};
     --bj-size-button-height-lg: #{function.rem(60px)};
-    --bj-size-button-paddig: var(--u-spacing-y-xxs) var(--u-spacing-x-md);
-    --bj-size-button-paddig-sm: calc(var(--u-spacing-unit) / 2) var(--u-spacing-x-sm);
-    --bj-size-button-paddig-lg: var(--u-spacing-y-xs) var(--u-spacing-x-lg);
-    --bj-size-button-paddig-xl: var(--u-spacing-y-sm) var(--u-spacing-x-xl);
-    --bj-size-button-square-height: #{function.rem(sizes.$button-square-height)};
+    --bj-size-button-padding: calc(var(--u-spacing-y-xxs) / 2) var(--u-spacing-x-md);
+    --bj-size-button-padding-sm: calc(var(--u-spacing-unit) / 2) var(--u-spacing-x-sm);
+    --bj-size-button-padding-lg: var(--u-spacing-y-xs) var(--u-spacing-x-lg);
+    --bj-size-button-padding-xl: var(--u-spacing-y-sm) var(--u-spacing-x-xl);
 
     --bj-size-input-border-radius: var(--bj-radius-xs);
     --bj-size-input-border-size: 2px;

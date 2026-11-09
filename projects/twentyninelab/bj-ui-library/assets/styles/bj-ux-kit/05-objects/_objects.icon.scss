@@ -1,19 +1,23 @@
-@use '../01-settings/settings.function.rem' as function;
-
-.bj-icon-xs {
-    font: {
-        size: function.rem(18px);
-    }
+.bj-ty-icon-xs {
+  font-size: var(--bj-ty-icon-size-xs, 0.75rem);
 }
 
-.bj-icon-md {
-    font: {
-        size: function.rem(24px);
-    }
+.bj-ty-icon-sm {
+  font-size: var(--bj-ty-icon-size-sm, 0.875rem);
 }
 
-.bj-icon-lg {
-    font: {
-        size: function.rem(32px);
-    }
+.bj-ty-icon {
+  font-size: var(--bj-ty-icon-size, 1rem);
+}
+
+.bj-ty-icon-md {
+  font-size: var(--bj-ty-icon-size-md, 1.125rem);
+}
+
+.bj-ty-icon-lg {
+  font-size: var(--bj-ty-icon-size-lg, 1.5rem);
+}
+
+.bj-ty-icon-xl {
+  font-size: var(--bj-ty-icon-size-xl, 2rem);
 }

@@ -1,0 +1,33 @@
+<bj-accordion
+    [id]="id"
+    [classes]="'bj-ds-nav__accordion'"
+    [buttonClasses]="'bj-ds-nav__accordion__btn'"
+    [contentClasses]="''"
+    #navbarAccordion>
+    <ng-container accordionButton>
+        <span class="bj-ty-semibold">{{label}}</span>
+        <i
+            aria-hidden="true"
+            class="fas"
+            [ngClass]="{
+                'fa-chevron-down': !navbarAccordion.open(),
+                'fa-chevron-up': navbarAccordion.open()
+            }">
+        </i>
+    </ng-container>
+    <ng-container accordionContent>
+        <ul class="bj-ds-nav__accordion__list">
+            @for (item of subList; track $index) {
+                <li
+                    bjDsNavEl
+                    class="bj-ds-nav__el"
+                    [ngClass]="{
+                        'u-mt-xxs': $index === 0
+                    }"
+                    [url]="item.url"
+                    [label]="item.label">
+                </li>
+            }
+        </ul>
+    </ng-container>
+</bj-accordion>

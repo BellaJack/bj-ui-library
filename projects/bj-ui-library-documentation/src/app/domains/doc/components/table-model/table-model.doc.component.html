@@ -1,0 +1,24 @@
+<div class="kw-table">
+    <table class="kw-table__table">
+        <thead class="kw-table-thead">
+            <tr class="kw-table-row">
+                <th class="kw-th">Name</th>
+                <th class="kw-th">Values</th>
+            </tr>
+        </thead>
+        <tbody class="kw-table-body">
+            @for (row of tableRows; track $index) {
+                <tr class="kw-table-row">
+                    <td class="kw-td"><code>{{ row.name }}</code></td>
+                    <td class="kw-td">
+                        <div class="bj-flex kw-gap-small">
+                            @for (value of row.values; track $index) {
+                                <code>{{ value }}</code>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

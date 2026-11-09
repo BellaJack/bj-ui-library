@@ -1,0 +1,103 @@
+<bj-doc-page [title]="'Icon'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>An icon reinforces a message with a simple symbol, using the Font Awesome classes.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <bj-icon icon="fas fa-house"></bj-icon>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Symbol: the glyph chosen with <code>icon</code>. It takes the color of the surrounding text.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>Next to a text, to make it faster to recognize.</li>
+                    <li>In a button, to reinforce the action.</li>
+                    <li>In lists and menus, to tell the items apart.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>As a clickable element on its own: use an icon-only <code>bj-button</code>.</li>
+                    <li>As decoration that adds noise without adding meaning.</li>
+                    <li>In place of a text when the symbol is not universally known.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Use the same icon for the same concept across the product.</li>
+                <li>Prefer the <code>fas</code> style, and avoid mixing styles in one view.</li>
+                <li>Match the icon size to the text next to it.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>The icon always has <code>aria-hidden="true"</code>: screen readers ignore it.</li>
+                <li>When the icon carries meaning, add the same information as text, even hidden with <code>u-v-hidden</code>.</li>
+                <li>Non-text content needs a contrast of at least 3:1 against its background.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Sizes'" [titleLevel]="3">
+                <p>Six sizes, from 12 to 32 pixels.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="sizesCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-icon icon="fas fa-star" size="extra-small"></bj-icon>
+                    <bj-icon icon="fas fa-star" size="small"></bj-icon>
+                    <bj-icon icon="fas fa-star"></bj-icon>
+                    <bj-icon icon="fas fa-star" size="medium"></bj-icon>
+                    <bj-icon icon="fas fa-star" size="large"></bj-icon>
+                    <bj-icon icon="fas fa-star" size="extra-large"></bj-icon>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Color'" [titleLevel]="3">
+                <p>Use <code>classes</code> with a <code>bj-color</code> utility to change the color.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="colorCode">
+                <bj-icon icon="fas fa-heart" size="large" classes="bj-color-secondary-500"></bj-icon>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Icon with a meaning'" [titleLevel]="3">
+                <p>When there is no visible text, add one for assistive technology.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="meaningCode">
+                <span>
+                    <bj-icon icon="fas fa-lock"></bj-icon>
+                    <span class="u-v-hidden">Private document</span>
+                </span>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

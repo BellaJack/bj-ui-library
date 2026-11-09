@@ -1,0 +1,11 @@
+.bj-table__cell {
+  white-space: normal;
+
+  &:nth-child(2) {
+    min-width: 9rem;
+  }
+
+  &:last-child {
+    min-width: 12rem;
+  }
+}

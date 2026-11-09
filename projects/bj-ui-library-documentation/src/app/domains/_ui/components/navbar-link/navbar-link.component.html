@@ -1,0 +1,15 @@
+<a 
+    class="bj-ds-nav__link"
+    routerLink="{{url}}" 
+    routerLinkActive=""
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page">
+    <span>{{label}}</span>
+</a>
+@if (subList && subList.length > 0) {
+    <ul class="bj-ds-nav__sub-list">
+        @for (item of subList; track $index) {
+            <li class="bj-ds-nav__el" bjDsNavEl [url]="item.url" [label]="item.label"></li>
+        }
+    </ul>
+}

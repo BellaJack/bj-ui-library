@@ -1,0 +1,16 @@
+@switch (titleLevel) {
+    @case (3) {
+        <h3 class="bj-ty-heading-3" [class]="marginClass">{{ title }}</h3>
+    }
+    @case (4) {
+        <h4 class="bj-ty-heading-4" [class]="marginClass">{{ title }}</h4>
+    }
+    @default {
+        <h2 class="bj-ty-heading-2" [class]="marginClass">{{ title }}</h2>
+    }
+}
+<div 
+    class="bj-dsa-wrap"
+    [class]="marginContentClass">
+    <ng-content></ng-content>
+</div>

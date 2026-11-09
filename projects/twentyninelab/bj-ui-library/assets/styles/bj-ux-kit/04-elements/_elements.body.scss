@@ -2,8 +2,8 @@
 @use '../02-tools/tools.utilities' as toolsUtilities;
 
 body {
-  background-color: var(--bj-surface-ground);
-  color: var(--text-color);
+  background-color: var(--bj-surface-ground, var(--bj-color-white));
+  color: var(--bj-color-body-main, var(--bj-color-gray-900));
   font-family: 'Lexend', sans-serif;
 }
 

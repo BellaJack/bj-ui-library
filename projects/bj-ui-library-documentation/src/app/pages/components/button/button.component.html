@@ -1,0 +1,167 @@
+<bj-doc-page [title]="'Button'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>Buttons let people trigger an action. Use <code>&lt;bj-button&gt;</code> for actions and <code>&lt;a bjButton&gt;</code> for navigation.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <bj-button>Save</bj-button>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Container: the native <code>button</code> or <code>a</code> element.</li>
+                <li>Text: the projected content, visually hidden in icon-only buttons.</li>
+                <li>Icon (optional): on the left or on the right of the text.</li>
+                <li>Badge (optional): on the left or on the right, on the corner of icon-only buttons.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>To submit a form or confirm a choice.</li>
+                    <li>To start an action on the current page.</li>
+                    <li>With <code>&lt;a bjButton&gt;</code>, for a navigation that needs the weight of a button.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>For links inside a sentence: use a plain link.</li>
+                    <li>For more than one primary action in the same area.</li>
+                    <li>For <code>danger</code> actions that can be undone without consequences.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Start with a verb and name the result: "Save changes", not "OK".</li>
+                <li>Keep the text short, ideally one or two words.</li>
+                <li>Pick icons that reinforce the text, and keep the same icon for the same action.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>Always project a text, or set <code>ariaLabel</code>: it is the only name an icon-only button has.</li>
+                <li>Use <code>ariaLabel</code> when the visible text needs more context. Keep the visible words in it, so voice control still works.</li>
+                <li>Icons are hidden from assistive technology, while the badge value is read after the text.</li>
+                <li>Native buttons work with <kbd>Enter</kbd> and <kbd>Space</kbd>, links with <kbd>Enter</kbd>.</li>
+                <li>A disabled button or link cannot be reached with the keyboard.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Variants'" [titleLevel]="3">
+                <p>Variants set the visual weight: use one <code>solid</code> button for the main action of an area.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="variantsCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-button variant="solid">Solid</bj-button>
+                    <bj-button variant="outline">Outline</bj-button>
+                    <bj-button variant="text">Text</bj-button>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Severities'" [titleLevel]="3">
+                <p>Severities work with every variant and adapt to the dark theme.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="severitiesCode">
+                <div class="bj-grid bj-gap-medium">
+                    @for (variant of ['solid', 'outline', 'text'] ; track variant) {
+                        <div class="bj-flex bj-gap-medium">
+                            <bj-button [variant]="$any(variant)" severity="primary">Primary</bj-button>
+                            <bj-button [variant]="$any(variant)" severity="secondary">Secondary</bj-button>
+                            <bj-button [variant]="$any(variant)" severity="contrast">Contrast</bj-button>
+                            <bj-button [variant]="$any(variant)" severity="danger">Danger</bj-button>
+                        </div>
+                    }
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Icon'" [titleLevel]="3">
+                <p>The icon goes on the left by default. Use the right side for actions that move forward.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="iconCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-button icon="fas fa-floppy-disk">Save</bj-button>
+                    <bj-button icon="fas fa-arrow-right" iconPosition="right">Next</bj-button>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Icon only'" [titleLevel]="3">
+                <p>The text stays in the page for assistive technology, hidden with <code>u-v-hidden</code>.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="iconOnlyCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-button icon="fas fa-trash" severity="danger" isIconOnly>Delete</bj-button>
+                    <bj-button icon="fas fa-pen" variant="outline" isIconOnly>Edit</bj-button>
+                    <bj-button icon="fas fa-gear" variant="text" severity="contrast" isIconOnly>Settings</bj-button>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Badge'" [titleLevel]="3">
+                <p>The badge goes on the right by default. Icon-only buttons show it on the corner.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="badgeCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-button [badge]="3">Messages</bj-button>
+                    <bj-button [badge]="3" badgePosition="left" variant="outline">Messages</bj-button>
+                    <bj-button [badge]="3" icon="fas fa-bell" variant="text" severity="contrast" isIconOnly>Notifications</bj-button>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Custom accessible name'" [titleLevel]="3">
+                <p>With <code>ariaLabel</code>, assistive technology reads this text instead of the projected one.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="ariaLabelCode">
+                <bj-button ariaLabel="Open the main menu">Menu</bj-button>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Link'" [titleLevel]="3">
+                <p>Use <code>a[bjButton]</code> for navigation: it accepts the same inputs, and <code>href</code> or <code>routerLink</code> as usual.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="linkCode">
+                <a bjButton href="https://github.com/BellaJack/bj-ui-library" variant="outline">GitHub</a>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Disabled'" [titleLevel]="3">
+                <p>Prefer explaining why an action is not available over disabling it silently.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="disabledCode">
+                <bj-button isDisabled>Save</bj-button>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

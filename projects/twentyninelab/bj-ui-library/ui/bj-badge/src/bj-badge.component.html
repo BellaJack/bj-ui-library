@@ -1,0 +1,6 @@
+<div class="bj-badge"
+    [ngClass]="getBadgeClass()"
+    [attr.style]="getBadgeStyle()">
+    <ng-content select="[badgeIcon]"></ng-content>
+    <ng-content></ng-content>
+</div>

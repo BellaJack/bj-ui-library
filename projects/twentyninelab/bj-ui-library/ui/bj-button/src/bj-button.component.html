@@ -1,0 +1,28 @@
+<ng-template #content>
+    @if (hasBadge() && badgePosition() === 'left') {
+        <span class="bj-btn-badge bj-btn-badge-left">{{ badge() }}</span>
+    }
+    @if (icon() && iconPosition() === 'left') {
+        <bj-icon [icon]="icon()"></bj-icon>
+    }
+    <span [class.u-v-hidden]="isTextHidden()" [attr.aria-hidden]="ariaLabel() ? 'true' : null">
+        <ng-content></ng-content>
+    </span>
+    @if (ariaLabel()) {
+        <span class="u-v-hidden">{{ ariaLabel() }}</span>
+    }
+    @if (icon() && iconPosition() === 'right') {
+        <bj-icon [icon]="icon()"></bj-icon>
+    }
+    @if (hasBadge() && badgePosition() === 'right') {
+        <span class="bj-btn-badge bj-btn-badge-right">{{ badge() }}</span>
+    }
+</ng-template>
+
+@if (isLink) {
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+} @else {
+    <button [type]="type()" [class]="buttonClasses()" [disabled]="isDisabled()">
+        <ng-container [ngTemplateOutlet]="content"></ng-container>
+    </button>
+}

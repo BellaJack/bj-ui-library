@@ -1,0 +1,130 @@
+<bj-doc-page [title]="'Badge'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>A badge is a small label that shows a status or a category.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <bj-badge>New</bj-badge>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Container: the background and the corner radius.</li>
+                <li>Icon (optional): the <code>badgeIcon</code> slot, on the left or on the right.</li>
+                <li>Text: the projected content.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>To show the status of an item, such as active or pending.</li>
+                    <li>To tag an item with a category.</li>
+                    <li>To highlight something new.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>For actions: a badge is not interactive, use a button.</li>
+                    <li>For long messages: use a paragraph or an alert.</li>
+                    <li>For a counter on a button: use the <code>badge</code> input of <code>bj-button</code>.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Use one or two words.</li>
+                <li>Use the same word for the same status across the product.</li>
+                <li>Give each color one meaning, and keep it.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>The text is read as plain content, so write it to make sense on its own.</li>
+                <li>Never rely on color alone: the text must carry the meaning too.</li>
+                <li><code>bj-icon</code> is hidden from assistive technology, so the icon adds nothing for screen readers.</li>
+                <li>Check the contrast when you choose a custom background.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Background'" [titleLevel]="3">
+                <p>Any <code>bj-bg</code> utility works. Status colors suit status badges.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="backgroundCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-badge backgroundColor="bj-bg-status-success">Active</bj-badge>
+                    <bj-badge backgroundColor="bj-bg-status-warning">Pending</bj-badge>
+                    <bj-badge backgroundColor="bj-bg-status-error">Failed</bj-badge>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Sizes'" [titleLevel]="3">
+                <p>The <code>full</code> size fills the row and centers the text.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="sizesCode">
+                <div class="bj-grid bj-gap-medium">
+                    <div class="bj-flex bj-gap-medium">
+                        <bj-badge size="small">Small</bj-badge>
+                        <bj-badge>Default</bj-badge>
+                        <bj-badge size="large">Large</bj-badge>
+                    </div>
+                    <bj-badge size="full">Full</bj-badge>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Radius'" [titleLevel]="3">
+                <p>The radius goes from straight corners to a pill shape.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="radiusCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-badge radius="none">None</bj-badge>
+                    <bj-badge>Small</bj-badge>
+                    <bj-badge radius="medium">Medium</bj-badge>
+                    <bj-badge radius="pills">Pills</bj-badge>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Icon'" [titleLevel]="3">
+                <p>Add the <code>badgeIcon</code> attribute to the element to place in the icon slot.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="iconCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-badge>
+                        <bj-icon badgeIcon icon="fas fa-check" size="small"></bj-icon>
+                        Verified
+                    </bj-badge>
+                    <bj-badge iconPosition="right">
+                        <bj-icon badgeIcon icon="fas fa-arrow-right" size="small"></bj-icon>
+                        Next
+                    </bj-badge>
+                </div>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

@@ -3,7 +3,7 @@
 
 .bj-layout-topbar {
   align-items: center;
-  background-color: var(--bj-layout-topbar-background, var(--bj-surface-card));
+  background-color: var(--bj-layout-topbar-background, var(--bj-surface-overlay));
   box-shadow: var(--bj-layout-topbar-shadow, var(--bj-surface-shadow));
   display: flex;
   justify-content: space-between;

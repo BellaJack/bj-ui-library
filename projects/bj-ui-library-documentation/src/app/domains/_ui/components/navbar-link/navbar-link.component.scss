@@ -1,0 +1,11 @@
+.bj-ds-nav__link {
+  color: inherit;
+  display: block;
+  padding-block: var(--u-spacing-y-xxs);
+  text-decoration: none;
+
+  &:hover,
+  &[aria-current='page'] {
+    font-weight: var(--bj-font-weight-bold);
+  }
+}

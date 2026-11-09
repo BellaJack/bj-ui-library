@@ -2,10 +2,11 @@ import { Component, inject, OnDestroy, OnInit, viewChild, ElementRef } from '@an
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { LayoutService } from '@twentyninelab/bj-ui-library/services/layout';
+import { BjIconComponent } from '@twentyninelab/bj-ui-library/ui/bj-icon';
 
 @Component({
   selector: 'bj-layout-header',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, BjIconComponent],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })

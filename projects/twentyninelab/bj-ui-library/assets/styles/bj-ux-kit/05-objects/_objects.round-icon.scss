@@ -1,6 +1,18 @@
+@use 'sass:list';
 @use '../01-settings/settings.function.rem' as function;
 
+// Round icon sizes: name, box size, font size
+$round-icon-sizes: (
+    'xs': (24px, 12px),
+    'sm': (32px, 14px),
+    'md': (44px, 18px),
+    'lg': (60px, 22px),
+    'xl': (80px, 28px)
+);
+
 .bj-round-icon {
+    // The bj-bg utilities read this token for their text color
+    --bj-color-body-main: var(--bj-color-gray-900);
     align-items: center;
     border-radius: 50%;
     display: flex;
@@ -14,22 +26,15 @@
     line-height: 1;
     width: function.rem(44px);
 
-    &--big {
-        font: {
-            size: function.rem(22px);
+    @each $name, $size in $round-icon-sizes {
+        &--#{$name} {
+            font: {
+                size: function.rem(list.nth($size, 2));
+            }
+
+            height: function.rem(list.nth($size, 1));
+            width: function.rem(list.nth($size, 1));
         }
-
-        height: function.rem(60px);
-        width: function.rem(60px);
-    }
-
-    &--small {
-        font: {
-            size: function.rem(12px);
-        }
-
-        height: function.rem(24px);
-        width: function.rem(24px);
     }
 }
 

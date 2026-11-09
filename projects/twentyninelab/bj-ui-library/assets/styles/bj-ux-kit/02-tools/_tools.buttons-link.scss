@@ -14,7 +14,7 @@
   border-radius: var(--bj-size-button-border-radius);
   color: var(--bj-color-button-text);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
 
   font: {
     weight: var(--bj-font-weight-bold);
@@ -23,8 +23,7 @@
   gap: settings.rem(10px);
   justify-content: center;
   min-height: var(--bj-size-button-height);
-  overflow: hidden;
-  padding: var(--bj-size-button-paddig);
+  padding: var(--bj-size-button-padding);
   position: relative;
 
   text: {
@@ -43,7 +42,7 @@
     color: var(--bj-color-button-text-focused);
   }
 
-  &.disabled,
+  &[aria-disabled='true'],
   &[disabled] {
     cursor: auto;
     opacity: .5;

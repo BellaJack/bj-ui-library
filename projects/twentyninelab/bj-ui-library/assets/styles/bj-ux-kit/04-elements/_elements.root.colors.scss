@@ -78,7 +78,6 @@
     --bj-color-success: #{colors.$bj-color-success};
     --bj-color-success-light: #{colors.$bj-color-success-light};
 
-    --bj-color-body-bg: var(--bj-color-white);
     --bj-color-body-main: var(--bj-color-gray-900);
     --bj-color-brd: var(--bj-color-gray-300);
     --bj-link-color: #7747F0;
@@ -95,91 +94,15 @@
     --bj-color-secondary-main-on-dark: var(--bj-color-secondary-300);
     --bj-color-tertiary-main-on-dark: var(--bj-color-tertiary-300);
 
-    /* Button Solid Color */
-    --bj-color-button-bg: var(--bj-color-body-main);
-    --bj-color-button-text: var(--bj-color-white);
-    --bj-color-button-border: var(--bj-color-button-bg);
-    --bj-color-button-bg-focused: transparent;
-    --bj-color-button-text-focused: var(--bj-color-button-bg);
-
-    --bj-color-button-bg-on-dark: var(--bj-color-white);
-    --bj-color-button-text-on-dark: var(--bj-color-body-main);
-    --bj-color-button-bg-on-dark-focused: transparent;
-    --bj-color-button-text-on-dark-focused: var(--bj-color-button-bg-on-dark);
-
-    /* Button Solid Primary Color */
-    --bj-color-button-bg-primary: var(--bj-color-primary-main);
-    --bj-color-button-text-primary: var(--bj-color-white);
-    --bj-color-button-bg-primary-focused: transparent;
-    --bj-color-button-text-primary-focused: var(--bj-color-primary-main);
-
-    --bj-color-button-bg-primary-on-dark: var(--bj-color-primary-main-on-dark);
-    --bj-color-button-text-primary-on-dark: var(--bj-color-body-main);
-    --bj-color-button-bg-primary-on-dark-focused: transparent;
-    --bj-color-button-text-primary-on-dark-focused: var(--bj-color-button-bg-primary-on-dark);
-
-    /* Button Solid Secondary Color */
-    --bj-color-button-bg-secondary: var(--bj-color-secondary-400);
-    --bj-color-button-text-secondary: var(--bj-color-body-main);
-    --bj-color-button-bg-secondary-focused: transparent;
-    --bj-color-button-text-secondary-focused: var(--bj-color-body-main);
-
-    --bj-color-button-bg-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
-    --bj-color-button-text-secondary-on-dark: var(--bj-color-body-main);
-    --bj-color-button-bg-secondary-on-dark-focused: transparent;
-    --bj-color-button-text-secondary-on-dark-focused: var(--bj-color-secondary-main-on-dark);
-
-    /* Button Solid Tertiary Color */
-
-    --bj-color-button-bg-tertiary: var(--bj-color-tertiary-main);
-    --bj-color-button-text-tertiary: var(--bj-color-white);
-    --bj-color-button-bg-tertiary-focused: transparent;
-    --bj-color-button-text-tertiary-focused: var(--bj-color-tertiary-main);
-
-    --bj-color-button-bg-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
-    --bj-color-button-text-tertiary-on-dark: var(--bj-color-body-main);
-    --bj-color-button-bg-tertiary-on-dark-focused: transparent;
-    --bj-color-button-text-tertiary-on-dark-focused: var(--bj-color-tertiary-main-on-dark);
-
-    /* Button Outline Color */
-
-    --bj-color-button-outline-bg: transparent;
-    --bj-color-button-outline-border: var(--bj-color-body-main);
-    --bj-color-button-outline-text: var(--bj-color-body-main);
-    --bj-color-button-outline-text-focused: var(--bj-color-white);
-
-    --bj-color-button-outline-text-on-dark: var(--bj-color-white);
-    --bj-color-button-outline-border-on-dark: var(--bj-color-white);
-    --bj-color-button-outline-bg-on-dark-focused: var(--bj-color-white);
-    --bj-color-button-outline-text-on-dark-focused: var(--bj-color-body-main);
-
-    /* Button Outline Primary Color */
-    --bj-color-button-outline-bg-primary-focused: var(--bj-color-primary-main);
-    --bj-color-button-outline-text-primary-focused: var(--bj-color-white);
-    --bj-color-button-outline-text-primary-on-dark: var(--bj-color-primary-main-on-dark);
-    --bj-color-button-outline-border-primary-on-dark: var(--bj-color-primary-main-on-dark);
-    --bj-color-button-outline-bg-primary-on-dark-focused: var(--bj-color-primary-main-on-dark);
-    --bj-color-button-outline-text-primary-on-dark-focused: var(--bj-color-body-main);
-
-    /* Button Outline Secondary Color */
-
-    --bj-color-button-outline-border-secondary: var(--bj-color-secondary-main);
-    --bj-color-button-outline-text-secondary: var(--bj-color-secondary-main);
-    --bj-color-button-outline-bg-secondary-focused: var(--bj-color-secondary-main);
-    --bj-color-button-outline-text-secondary-focused: var(--bj-color-white);
-    --bj-color-button-outline-text-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
-    --bj-color-button-outline-border-secondary-on-dark: var(--bj-color-secondary-main-on-dark);
-    --bj-color-button-outline-bg-secondary-on-dark-focused: var(--bj-color-secondary-main-on-dark);
-    --bj-color-button-outline-text-secondary-on-dark-focused: var(--bj-color-body-main);
-
-    /* Button Outline Tertiary Color */
-    --bj-color-button-outline-text-tertiary: var(--bj-color-tertiary-main);
-    --bj-color-button-outline-bg-tertiary-focused: var(--bj-color-tertiary-main);
-    --bj-color-button-outline-text-tertiary-focused: var(--bj-color-white);
-    --bj-color-button-outline-text-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
-    --bj-color-button-outline-border-tertiary-on-dark: var(--bj-color-tertiary-main-on-dark);
-    --bj-color-button-outline-bg-tertiary-on-dark-focused: var(--bj-color-tertiary-main-on-dark);
-    --bj-color-button-outline-text-tertiary-on-dark-focused: var(--bj-color-body-main);
+    /* Button */
+    --bj-color-button-primary: var(--bj-color-primary-main);
+    --bj-color-button-on-primary: var(--bj-color-white);
+    --bj-color-button-secondary: var(--bj-color-secondary-800);
+    --bj-color-button-on-secondary: var(--bj-color-white);
+    --bj-color-button-contrast: var(--bj-color-body-main);
+    --bj-color-button-on-contrast: var(--bj-surface-ground);
+    --bj-color-button-danger: color-mix(in oklch, var(--bj-color-error) 88%, var(--bj-color-black));
+    --bj-color-button-on-danger: var(--bj-color-white);
 
     --bj-color-input-background: var(--bj-color-white);
     --bj-color-input-text: var(--bj-color-body-main);

@@ -1,22 +1,19 @@
 @use '../01-settings/settings.breakpoints' as breakpoints;
 @use '../02-tools/tools.buttons-link' as tools;
-@use "../02-tools/tools.media-queries" as toolsMediaQueries;
+@use '../02-tools/tools.media-queries' as toolsMediaQueries;
 
-// Button variants map
-$button-variants: (
-    'primary': 'primary',
-    'secondary': 'secondary',
-    'tertiary': 'tertiary'
-);
+// A button is the composition of three classes: `.bj-btn`, a variant and a severity.
+//   <button class="bj-btn bj-btn-outline bj-btn-danger">
+// The severity picks the colors, the variant decides where they are applied.
 
-// Button sizes map
+$button-severities: ('primary', 'secondary', 'contrast', 'danger');
+
 $button-sizes: (
     'small': 'sm',
     'large': 'lg',
     'extra-large': 'xl'
 );
 
-// Breakpoint prefixes
 $breakpoints-map: (
     'md': breakpoints.$screen-md,
     'lg': breakpoints.$screen-lg,
@@ -24,191 +21,102 @@ $breakpoints-map: (
     'xxl': breakpoints.$screen-xxl
 );
 
-// Border color placeholders
-%btn-primary-border {
-    --bj-color-button-border: var(--bj-color-primary-main);
-}
+// Base
+.bj-btn {
+    --bj-color-button-main: var(--bj-color-button-primary);
+    --bj-color-button-on-main: var(--bj-color-button-on-primary);
 
-%btn-secondary-border {
-    --bj-color-button-border: var(--bj-color-secondary-main);
-}
-
-%btn-tertiary-border {
-    --bj-color-button-border: var(--bj-color-tertiary-main);
-}
-
-%btn-outline {
-    --bj-color-button-bg: var(--bj-color-button-outline-bg);
-}
-
-// Base button styles
-.bj-btn-solid,
-.bj-btn-outline,
-.bj-btn-solid-primary,
-.bj-btn-solid-secondary,
-.bj-btn-solid-tertiary,
-.bj-btn-outline-primary,
-.bj-btn-outline-secondary,
-.bj-btn-outline-tertiary {
     @include tools.bj-button-base;
 }
 
-// Mixin for solid button variant
-@mixin solid-button-variant($variant) {
-    --bj-color-button-bg: var(--bj-color-button-bg-#{$variant});
-    --bj-color-button-text: var(--bj-color-button-text-#{$variant});
-    --bj-color-button-bg-focused: var(--bj-color-button-bg-#{$variant}-focused);
-    --bj-color-button-text-focused: var(--bj-color-button-text-#{$variant}-focused);
-    --bj-color-button-outline-border: var(--bj-color-button-bg-#{$variant}-focused);
-
-    @if $variant == 'primary' {
-        --bj-color-button-bg: var(--bj-color-primary-main);
-        @extend %btn-primary-border;
-    } @else if $variant == 'secondary' {
-        --bj-color-button-border: var(--bj-color-button-bg-#{$variant});
-    } @else if $variant == 'tertiary' {
-        @extend %btn-tertiary-border;
-    }
-
-    &.bj-btn-on-dark {
-        --bj-color-button-bg: var(--bj-color-#{$variant}-main-on-dark);
-        --bj-color-button-text: var(--bj-color-button-text-#{$variant}-on-dark);
-        --bj-color-button-border: var(--bj-color-#{$variant}-main-on-dark);
-        --bj-color-button-bg-focused: var(--bj-color-button-bg-#{$variant}-on-dark-focused);
-        --bj-color-button-text-focused: var(--bj-color-button-text-#{$variant}-on-dark-focused);
+// Severities
+@each $severity in $button-severities {
+    .bj-btn-#{$severity} {
+        --bj-color-button-main: var(--bj-color-button-#{$severity});
+        --bj-color-button-on-main: var(--bj-color-button-on-#{$severity});
     }
 }
 
-// Mixin for outline button variant
-@mixin outline-button-variant($variant) {
-    @extend %btn-outline;
-    
-    @if $variant == 'primary' {
-        --bj-color-button-text: var(--bj-color-primary-main);
-        @extend %btn-primary-border;
-    } @else if $variant == 'secondary' {
-        --bj-color-button-text: var(--bj-color-secondary-main);
-        @extend %btn-secondary-border;
-    } @else if $variant == 'tertiary' {
-        --bj-color-button-text: var(--bj-color-button-outline-text-#{$variant});
-        @extend %btn-tertiary-border;
-    }
-    
-    --bj-color-button-bg-focused: var(--bj-color-button-outline-bg-#{$variant}-focused);
-    --bj-color-button-text-focused: var(--bj-color-button-outline-text-#{$variant}-focused);
-
-    &.bj-btn-on-dark {
-        --bj-color-button-text: var(--bj-color-button-outline-text-#{$variant}-on-dark);
-        --bj-color-button-border: var(--bj-color-button-outline-border-#{$variant}-on-dark);
-        --bj-color-button-bg-focused: var(--bj-color-button-outline-bg-#{$variant}-on-dark-focused);
-        --bj-color-button-text-focused: var(--bj-color-button-outline-text-#{$variant}-on-dark-focused);
-
-        @extend %btn-outline;
-
-        &.bj-btn-no-border {
-            --bj-color-button-border: transparent;
-        }
-    }
+// Variants
+.bj-btn-solid {
+    --bj-color-button-bg: var(--bj-color-button-main);
+    --bj-color-button-text: var(--bj-color-button-on-main);
+    --bj-color-button-border: var(--bj-color-button-main);
+    --bj-color-button-bg-focused: transparent;
+    --bj-color-button-text-focused: var(--bj-color-button-main);
 }
 
-// General on-dark modifier
-.bj-btn-on-dark {
-    --bj-color-button-bg: var(--bj-color-button-bg-on-dark);
-    --bj-color-button-text: var(--bj-color-button-text-on-dark);
-    --bj-color-button-border: var(--bj-color-button-bg-on-dark);
-    --bj-color-button-bg-focused: var(--bj-color-button-bg-on-dark-focused);
-    --bj-color-button-text-focused: var(--bj-color-button-text-on-dark-focused);
-}
-
-// Generate solid button variants
-@each $name, $variant in $button-variants {
-    .bj-btn-solid-#{$name} {
-        @include solid-button-variant($variant);
-    }
-}
-
-// Generate outline button variants
 .bj-btn-outline {
-    --bj-color-button-text: var(--bj-color-button-outline-text);
-    --bj-color-button-bg-focused: var(--bj-color-button-outline-text);
-    --bj-color-button-text-focused: var(--bj-color-button-outline-text-focused);
-
-    @extend %btn-outline;
-
-    &.bj-btn-on-dark {
-        --bj-color-button-text: var(--bj-color-button-outline-text-on-dark);
-        --bj-color-button-bg-focused: var(--bj-color-button-outline-bg-on-dark-focused);
-        --bj-color-button-text-focused: var(--bj-color-button-outline-text-on-dark-focused);
-        @extend %btn-outline;
-    }
+    --bj-color-button-bg: transparent;
+    --bj-color-button-text: var(--bj-color-button-main);
+    --bj-color-button-border: var(--bj-color-button-main);
+    --bj-color-button-bg-focused: var(--bj-color-button-main);
+    --bj-color-button-text-focused: var(--bj-color-button-on-main);
 }
 
-@each $name, $variant in $button-variants {
-    .bj-btn-outline-#{$name} {
-        @include outline-button-variant($variant);
-    }
-}
-
-// Button modifiers
-.bj-btn-no-border {
+.bj-btn-text {
+    --bj-color-button-bg: transparent;
+    --bj-color-button-text: var(--bj-color-button-main);
     --bj-color-button-border: transparent;
+    --bj-color-button-bg-focused: color-mix(in srgb, var(--bj-color-button-main) 8%, transparent);
+    --bj-color-button-text-focused: var(--bj-color-button-main);
 }
 
-.bj-btn-bg-white {
-    --bj-color-button-bg: var(--bj-color-white);
-}
-
-.bj-btn-bg-light-gray {
-    --bj-color-button-bg: var(--bj-color-gray-200);
-}
-
-.bj-btn-square {
+// Icon only. It is as tall as a text button because both take their height
+// from --bj-size-button-height.
+.bj-btn-icon {
     aspect-ratio: 1;
-    min-height: var(--bj-size-button-square-height);
-    
-    padding: {
-        left: 0;
-        right: 0;
-    }
+    padding-inline: 0;
 }
 
-.bj-btn-thin {
-    --bj-size-button-border-size: 1px;
+// Badge. Its colors do not depend on the button ones, which turn transparent
+// on outline, text and hovered solid buttons.
+.bj-btn-badge {
+    align-items: center;
+    background-color: var(--bj-surface-ground);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    color: var(--bj-color-body-main);
+    display: inline-flex;
+    font-size: .75rem;
+    height: 1.25rem;
+    justify-content: center;
+    line-height: 1;
+    min-width: 1.25rem;
+    padding: 0 .25rem;
 }
 
-.bj-btn-no-brd {
-    --bj-size-button-border-size: 0;
+// An icon button has no room for an inline badge, so it sits on the corner
+.bj-btn-icon .bj-btn-badge {
+    position: absolute;
+    top: -.5rem;
 }
 
-// Button sizes (base)
-@each $name, $size in $button-sizes {
-    .bj-btn-#{$name} {
-        @if $name == 'extra-large' {
-            --bj-size-button-padding: var(--bj-size-button-padding-#{$size});
-        } @else {
-            --bj-size-button-height: var(--bj-size-button-height-#{$size});
-            --bj-size-button-padding: var(--bj-size-button-padding-#{$size});
-        }
-    }
+.bj-btn-icon .bj-btn-badge-left {
+    left: -.5rem;
 }
 
-// Mixin for responsive button sizes
-@mixin generate-button-sizes($prefix) {
+.bj-btn-icon .bj-btn-badge-right {
+    right: -.5rem;
+}
+
+// Sizes
+@mixin button-sizes($prefix: '') {
     @each $name, $size in $button-sizes {
-        .bj-btn-#{$prefix}-#{$name} {
-            @if $name == 'extra-large' {
-                --bj-size-button-padding: var(--bj-size-button-padding-#{$size});
-            } @else {
+        .bj-btn-#{$prefix}#{$name} {
+            --bj-size-button-padding: var(--bj-size-button-padding-#{$size});
+
+            @if $name != 'extra-large' {
                 --bj-size-button-height: var(--bj-size-button-height-#{$size});
-                --bj-size-button-padding: var(--bj-size-button-padding-#{$size});
             }
         }
     }
 }
 
-// Generate responsive button sizes
+@include button-sizes;
+
 @each $prefix, $breakpoint in $breakpoints-map {
     @include toolsMediaQueries.respond-above($breakpoint) {
-        @include generate-button-sizes($prefix);
+        @include button-sizes('#{$prefix}-');
     }
 }

@@ -1,0 +1,111 @@
+<bj-doc-page [title]="'Icon Round'" [infoVersion]="'Need version 0.0.1 or later'">
+    <ng-container bj-ds-example>
+        <div>
+            <bj-doc-explanation-wrap [title]="'Overview'">
+                <p>A round icon places an icon inside a colored circle, to give it more visual weight.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="overviewCode">
+                <div class="bj-flex">
+                    <bj-icon-round icon="fas fa-check"></bj-icon-round>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Anatomy'" [titleLevel]="2">
+            <ol>
+                <li>Circle: the colored background, sized by <code>size</code>.</li>
+                <li>Icon: a <code>bj-icon</code> centered in the circle.</li>
+            </ol>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Usage</h2>
+        <div class="bj-grid bj-grid--lg-2">
+            <bj-doc-card [title]="'When to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-success-light'">
+                <ul>
+                    <li>To mark a status next to a message.</li>
+                    <li>To introduce the items of a feature list.</li>
+                    <li>To give an empty state a focal point.</li>
+                </ul>
+            </bj-doc-card>
+            <bj-doc-card [title]="'When NOT to use'" [titleLevel]="3" [backgroundClass]="'bj-bg-status-error-light'">
+                <ul>
+                    <li>As a button: it is not interactive, use an icon-only <code>bj-button</code>.</li>
+                    <li>To represent a person: use <code>bj-avatar</code>.</li>
+                    <li>Inside a line of text: use <code>bj-icon</code>.</li>
+                </ul>
+            </bj-doc-card>
+        </div>
+
+        <bj-doc-card [title]="'Content Guidelines'" [titleLevel]="3" [backgroundClass]="'bj-bg-secondary-100'">
+            <ul>
+                <li>Use the status colors only for real statuses.</li>
+                <li>Choose simple, recognizable icons: small sizes lose detail.</li>
+                <li>Keep one size for the same kind of content.</li>
+            </ul>
+        </bj-doc-card>
+
+        <bj-doc-card [title]="'Accessibility'" [titleLevel]="3">
+            <ul>
+                <li>The component is decorative: it always has <code>aria-hidden="true"</code>.</li>
+                <li>The text next to it must carry the whole message, status included.</li>
+                <li>Never rely on the color alone to tell statuses apart.</li>
+            </ul>
+        </bj-doc-card>
+
+        <hr />
+
+        <bj-doc-explanation-wrap [title]="'Component API'">
+            <bj-doc-table [tableRows]="docTableRow"></bj-doc-table>
+        </bj-doc-explanation-wrap>
+
+        <hr />
+
+        <h2 class="bj-ty-heading-2">Implementation scenarios</h2>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Sizes'" [titleLevel]="3">
+                <p>Five sizes, from 24 to 80 pixels.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="sizesCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-icon-round icon="fas fa-check" size="extra-small"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-check" size="small"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-check" size="medium"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-check" size="large"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-check" size="extra-large"></bj-icon-round>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'Colors'" [titleLevel]="3">
+                <p>The background follows the meaning of the content.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="colorsCode">
+                <div class="bj-flex bj-gap-medium">
+                    <bj-icon-round icon="fas fa-user"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-check" color="success"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-triangle-exclamation" color="warning"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-xmark" color="error"></bj-icon-round>
+                    <bj-icon-round icon="fas fa-moon" color="gray-dark"></bj-icon-round>
+                </div>
+            </bj-doc-code-example>
+        </div>
+
+        <div class="bj-grid bj-gap-large">
+            <bj-doc-explanation-wrap [title]="'With text'" [titleLevel]="3">
+                <p>The <code>bj-round-icon-text</code> class aligns the circle with its message.</p>
+            </bj-doc-explanation-wrap>
+            <bj-doc-code-example [code]="withTextCode">
+                <div class="bj-round-icon-text">
+                    <bj-icon-round icon="fas fa-check" color="success"></bj-icon-round>
+                    <p>Your changes have been saved.</p>
+                </div>
+            </bj-doc-code-example>
+        </div>
+    </ng-container>
+</bj-doc-page>

@@ -1,5 +1,13 @@
 :root[class*='bj-app-dark'] {
-    --bj-surface-border: var(--p-primary-300);
-    --bj-surface-ground: var(--p-surface-950);
-    --bj-surface-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+    --bj-surface-ground: var(--bj-color-gray-950);
+    --bj-color-body-main: var(--bj-color-white);
+    --bj-surface-overlay: var(--bj-color-gray-900);
+
+    --bj-color-button-primary: var(--bj-color-primary-main-on-dark);
+    --bj-color-button-on-primary: var(--bj-color-gray-950);
+    --bj-color-button-secondary: var(--bj-color-secondary-main-on-dark);
+    --bj-color-button-on-secondary: var(--bj-color-gray-950);
+    --bj-color-button-danger: color-mix(in oklch, var(--bj-color-error) 70%, var(--bj-color-white));
+    --bj-color-button-on-danger: var(--bj-color-gray-950);
+
 }

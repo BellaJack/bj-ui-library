@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild, OnDestroy, inject } from '@angular/core';
 import { LayoutService } from '@twentyninelab/bj-ui-library/services/layout';
 import { RouterModule } from '@angular/router';
+import { NavbarLinkComponent } from '../../../_ui/components/navbar-link/navbar-link.component';
 
 @Component({
   selector: 'bj-layout-sidebar',
-  imports: [RouterModule],
+  imports: [RouterModule, NavbarLinkComponent],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })

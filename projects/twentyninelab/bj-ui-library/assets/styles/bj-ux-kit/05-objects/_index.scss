@@ -27,7 +27,7 @@
 @forward './objects.dp-layers';
 
 // Component patterns
-@forward './objects.button' hide $breakpoints-map, $button-variants, $button-sizes;
+@forward './objects.button' hide $breakpoints-map, $button-severities, $button-sizes;
 @forward './objects.forms';
 @forward './objects.input';
 @forward './objects.icon';

@@ -1,0 +1,34 @@
+:host(.bj-avatar) {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: var(--bj-avatar-background, var(--bj-color-primary-700));
+  border-radius: var(--bj-avatar-border-radius, 50%);
+  color: var(--bj-avatar-color, var(--bj-color-gray-100));
+  display: flex;
+  font-weight: var(--bj-avatar-font-weight, var(--bj-font-weight-bold));
+  font-size: var(--bj-avatar-font-size, 1rem);
+  justify-content: center;
+  text-transform: var(--bj-avatar-text-transform, uppercase);
+  width: var(--bj-avatar-size, 40px);
+
+  &.bj-avatar--square {
+    --bj-avatar-border-radius: 0;
+  }
+
+  &.bj-avatar {
+    &--small {
+      --bj-avatar-size: 32px;
+      font-size: var(--bj-avatar-xs-font-size, 0.875rem);
+    }
+
+    &--large {
+      --bj-avatar-size: 60px;
+      font-size: var(--bj-avatar-lg-font-size, 1.125rem);
+    }
+
+    &--extra-large {
+      --bj-avatar-size: 80px;
+      font-size: var(--bj-avatar-xl-font-size, 1.5rem);
+    }
+  }
+}

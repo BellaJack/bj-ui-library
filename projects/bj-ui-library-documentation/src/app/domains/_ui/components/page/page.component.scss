@@ -1,0 +1,52 @@
+@use 'bj-ux-kit/01-settings/settings.breakpoints' as breakpoints;
+@use 'bj-ux-kit/02-tools/tools.media-queries' as mediaQueries;
+
+.bj-doc-page {
+  display: grid;
+  gap: var(--u-spacing-y-md);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.bj-doc-page-title {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--u-spacing-y-xxs) var(--u-spacing-x-sm);
+  justify-content: space-between;
+}
+
+.bj-doc-page-grid {
+  gap: var(--u-spacing-y-md);
+}
+
+// Chosen with CSS and not in the template: the width is unknown while prerendering
+.bj-doc-page-side {
+  display: none;
+}
+
+@include mediaQueries.respond-above(breakpoints.$screen-xl) {
+  .bj-doc-page {
+    grid-template-areas:
+      'title title'
+      'content side';
+    grid-template-columns: minmax(0, 1fr) 14rem;
+  }
+
+  .bj-doc-page-title {
+    grid-area: title;
+  }
+
+  .bj-doc-page-content {
+    background: var(--bj-surface-overlay);
+    grid-area: content;
+  }
+
+  .bj-doc-page-side {
+    display: block;
+    grid-area: side;
+  }
+
+  .bj-doc-page-side-accordion {
+    display: none;
+  }
+}
